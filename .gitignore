@@ -51,3 +51,6 @@ coverage/
 # Misc
 *.tgz
 .npm/
+
+# Playwright
+.playwright-mcp/
