@@ -52,7 +52,7 @@ const Home = ({ pageInfo, experiences, projects, skills, socials }: Props) => {
           href="/favicon-16x16.png"
         />
         <link rel="manifest" href="/site.webmanifest" />
-        <title>{"Mitch's Portfolio"}</title>
+        <title>{"Sunil Belde - Portfolio"}</title>
       </Head>
 
       {/* Google Analytics */}
