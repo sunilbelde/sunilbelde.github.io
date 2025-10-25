@@ -12,6 +12,9 @@ build/
 out/
 .next/
 
+# Next.js
+next-env.d.ts
+
 # Development
 .DS_Store
 *.local
