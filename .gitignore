@@ -9,6 +9,8 @@ pnpm-debug.log*
 dist/
 build/
 .vite/
+out/
+.next/
 
 # Development
 .DS_Store

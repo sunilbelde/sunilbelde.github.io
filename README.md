@@ -1,18 +1,57 @@
-# Mitch's Portfolio Website
+# Sunil Belde's Portfolio Website
 
-![alt text](https://cdn.sanity.io/images/xbn4zmfs/production/3de98614552f63c0c1446910ce241b3a67dfb0ef-2268x748.png)
+A modern, responsive portfolio website built with Next.js, TypeScript, Framer Motion, and Tailwind CSS.
 
-I wanted to learn more about Next JS, Typescript, Framer Motion and Tailwind and so I used my portfolio website as an opportunity to do this. The website was originally inspired by a YouTube video by Sonny Sangha, and over time has morphed into something I am quite proud of. The portfolio uses Sanity as backend, so that it can update the information without rebuilding the application.
+## Overview
 
-Want to see it in action? You can find the website [here](https://mitchellsparrow.com)!
+This portfolio showcases my projects, skills, and professional experience. Built with modern web technologies to provide a smooth, interactive user experience with engaging animations and a clean design.
 
-# Next JS:
+**Live Site:** [sunilbelde.github.io](https://sunilbelde.github.io)
 
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+## Tech Stack
 
-## Running the code
+- **Framework:** [Next.js 16](https://nextjs.org/) - React framework with server-side rendering
+- **Language:** [TypeScript](https://www.typescriptlang.org/) - Type-safe JavaScript
+- **Styling:** [Tailwind CSS](https://tailwindcss.com/) - Utility-first CSS framework
+- **Animations:** [Framer Motion](https://www.framer.com/motion/) - Production-ready motion library
+- **Icons:** [Heroicons](https://heroicons.com/) - Beautiful hand-crafted SVG icons
+- **Forms:** [React Hook Form](https://react-hook-form.com/) - Performant form validation
 
-First, run the development server:
+## Features
+
+- ⚡️ Fast page loads with Next.js SSR and optimization
+- 🎨 Modern, responsive design with Tailwind CSS
+- ✨ Smooth animations and transitions with Framer Motion
+- 📱 Mobile-first responsive layout
+- 🎯 Type-safe development with TypeScript
+- 🔍 SEO optimized
+- ♿️ Accessible components
+
+## Getting Started
+
+### Prerequisites
+
+- [Node.js](https://nodejs.org/) (version 18 or higher)
+- npm or yarn package manager
+
+### Installation
+
+1. Clone the repository:
+```bash
+git clone https://github.com/sunilbelde/sunilbelde.github.io.git
+cd sunilbelde.github.io
+```
+
+2. Install dependencies:
+```bash
+npm install
+# or
+yarn install
+```
+
+### Running the Development Server
+
+Start the development server:
 
 ```bash
 npm run dev
@@ -20,31 +59,89 @@ npm run dev
 yarn dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000) in your browser to see the portfolio.
 
-You can start editing the page by modifying `pages/index.tsx`. The page auto-updates as you edit the file.
+The page auto-updates as you edit files - changes will be reflected instantly.
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.ts`.
+### Building for Production
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+Create an optimized production build:
 
-# Vercel:
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
-
-# Sanity:
-
-To just run sanity:
-
-```
-cd sanity
-sanity start
+```bash
+npm run build
+npm start
 ```
 
-To deploy sanity:
+## Project Structure
 
 ```
-sanity deploy
+sunilbelde.github.io/
+├── components/          # React components
+│   ├── Header.tsx      # Navigation header
+│   ├── Hero.tsx        # Hero section with animated intro
+│   ├── About.tsx       # About section
+│   ├── Skills.tsx      # Skills showcase
+│   ├── WorkExperience.tsx  # Work experience timeline
+│   ├── Projects.tsx    # Project portfolio
+│   └── ContactMe.tsx   # Contact form
+├── pages/              # Next.js pages
+│   ├── _app.tsx        # App wrapper
+│   ├── index.tsx       # Home page
+│   └── api/            # API routes
+├── styles/             # Global styles
+│   └── globals.css     # Tailwind CSS imports
+├── utils/              # Utility functions
+├── data/               # Mock data
+├── public/             # Static assets
+└── typings.d.ts        # TypeScript type definitions
 ```
+
+## Customization
+
+### Update Content
+
+- **Personal Info:** Edit the data in `data/mockData.ts`
+- **Components:** Modify components in the `components/` directory
+- **Styling:** Update Tailwind configuration in `tailwind.config.js`
+- **Colors & Theme:** Customize in `styles/globals.css`
+
+### Add New Sections
+
+1. Create a new component in `components/`
+2. Import and add it to `pages/index.tsx`
+3. Style using Tailwind CSS classes
+
+## Deployment
+
+### GitHub Pages
+
+This project is configured for deployment to GitHub Pages:
+
+```bash
+npm run build
+# Deploy the 'out' directory to gh-pages branch
+```
+
+### Vercel
+
+The easiest way to deploy is using [Vercel](https://vercel.com):
+
+1. Push your code to GitHub
+2. Import the project in Vercel
+3. Vercel will automatically detect Next.js and deploy
+
+[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https://github.com/sunilbelde/sunilbelde.github.io)
+
+## Contributing
+
+Feel free to fork this project and customize it for your own portfolio!
+
+## License
+
+MIT
+
+## Contact
+
+Sunil Belde - [GitHub](https://github.com/sunilbelde)
+
+Project Link: [https://github.com/sunilbelde/sunilbelde.github.io](https://github.com/sunilbelde/sunilbelde.github.io)
