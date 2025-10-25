@@ -122,6 +122,10 @@ After running `npm run build`, deploy the `dist/` folder to any static hosting s
 
 Requires support for CSS Grid, CSS Custom Properties, and ES6+ JavaScript modules.
 
+## Contributing
+
+Feel free to fork this project and customize it for your own portfolio!
+
 ## License
 
 MIT
