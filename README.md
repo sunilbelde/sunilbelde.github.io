@@ -1,131 +1,50 @@
-# Portfolio Website
+# Mitch's Portfolio Website
 
-A modern, responsive personal portfolio website built with vanilla JavaScript, HTML, and CSS.
+![alt text](https://cdn.sanity.io/images/xbn4zmfs/production/3de98614552f63c0c1446910ce241b3a67dfb0ef-2268x748.png)
 
-## Features
+I wanted to learn more about Next JS, Typescript, Framer Motion and Tailwind and so I used my portfolio website as an opportunity to do this. The website was originally inspired by a YouTube video by Sonny Sangha, and over time has morphed into something I am quite proud of. The portfolio uses Sanity as backend, so that it can update the information without rebuilding the application.
 
-- Responsive design with mobile-first approach
-- Modular CSS architecture for easy maintenance
-- Component-based JavaScript structure
-- Dark mode support (follows system preference)
-- Smooth scrolling navigation
-- Mobile-friendly hamburger menu
-- Contact form with validation
+Want to see it in action? You can find the website [here](https://mitchellsparrow.com)!
 
-## Prerequisites
+# Next JS:
 
-- [Node.js](https://nodejs.org/) (version 14 or higher)
-- npm (comes with Node.js)
+This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
-## Setup
+## Running the code
 
-1. **Clone or download this repository**
-
-2. **Install dependencies**
-   ```bash
-   npm install
-   ```
-
-## Running the Project
-
-### Development Mode
-
-Start the development server with hot module reloading:
+First, run the development server:
 
 ```bash
 npm run dev
+# or
+yarn dev
 ```
 
-This will start the Vite dev server at `http://localhost:3000` and automatically open it in your browser.
+Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-### Build for Production
+You can start editing the page by modifying `pages/index.tsx`. The page auto-updates as you edit the file.
 
-Create an optimized production build:
+[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.ts`.
 
-```bash
-npm run build
-```
+The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
 
-The build output will be in the `dist/` directory.
+# Vercel:
 
-### Preview Production Build
+The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
-Preview the production build locally:
+Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
 
-```bash
-npm run preview
-```
+# Sanity:
 
-## Customization
-
-### Update Personal Information
-
-1. **Edit basic info**: Open `index.html` and update:
-   - Your name in the hero section
-   - About section content
-   - Contact information
-
-2. **Update projects**: Edit `src/js/data/projects.js` to add your projects
-
-3. **Update skills**: Edit `src/js/data/skills.js` to list your skills
-
-### Styling
-
-- **Colors and design tokens**: Modify `src/styles/variables.css`
-- **Component styles**: Edit files in `src/styles/components/`
-- **Add new sections**: Follow the pattern in existing components
-
-## Project Structure
+To just run sanity:
 
 ```
-/
-├── index.html              # Main HTML file
-├── src/
-│   ├── js/
-│   │   ├── main.js        # JavaScript entry point
-│   │   ├── components/    # Component modules
-│   │   └── data/          # Data files for projects and skills
-│   └── styles/
-│       ├── main.css       # CSS entry point
-│       ├── variables.css  # Design tokens
-│       ├── components/    # Component styles
-│       └── utilities.css  # Utility classes
-├── package.json
-└── vite.config.js
+cd sanity
+sanity start
 ```
 
-## Available Scripts
+To deploy sanity:
 
-| Command | Description |
-|---------|-------------|
-| `npm run dev` | Start development server |
-| `npm run build` | Build for production |
-| `npm run preview` | Preview production build |
-| `npm run format` | Format code with Prettier |
-| `npm run lint:css` | Lint CSS files |
-
-## Deployment
-
-After running `npm run build`, deploy the `dist/` folder to any static hosting service:
-
-- [Netlify](https://www.netlify.com/)
-- [Vercel](https://vercel.com/)
-- [GitHub Pages](https://pages.github.com/)
-- [Cloudflare Pages](https://pages.cloudflare.com/)
-
-## Browser Support
-
-- Chrome (latest)
-- Firefox (latest)
-- Safari (latest)
-- Edge (latest)
-
-Requires support for CSS Grid, CSS Custom Properties, and ES6+ JavaScript modules.
-
-## Contributing
-
-Feel free to fork this project and customize it for your own portfolio!
-
-## License
-
-MIT
+```
+sanity deploy
+```
