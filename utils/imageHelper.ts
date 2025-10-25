@@ -8,8 +8,8 @@ export const getImageUrl = (image: Image | undefined): string => {
 
   // Generate a placeholder image based on the reference ID
   const imageMap: Record<string, string> = {
-    "image-hero": "https://via.placeholder.com/400x400?text=Sunil+Belde",
-    "image-profile": "https://via.placeholder.com/400x400?text=Sunil+Belde",
+    "image-hero": "/profile_pic.png",
+    "image-profile": "/full_profile_pic.jpeg",
     // Technologies
     "tech-python": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg",
     "tech-pytorch": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/pytorch/pytorch-original.svg",

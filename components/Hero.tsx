@@ -1,5 +1,5 @@
 import Link from "next/link";
-import React from "react";
+import { useEffect, useState } from "react";
 import { Cursor, useTypewriter } from "react-simple-typewriter";
 import { getImageUrl } from "../utils/imageHelper";
 import { PageInfo } from "../typings";
@@ -8,7 +8,8 @@ import BackgroundCircles from "./BackgroundCircles";
 type Props = { pageInfo: PageInfo };
 
 export default function Hero({ pageInfo }: Props) {
-  const [text, count] = useTypewriter({
+  const [isClient, setIsClient] = useState(false);
+  const [text] = useTypewriter({
     words: [
       `Hi, the name's ${pageInfo?.name}`,
       "I like riding my 🚲",
@@ -18,6 +19,10 @@ export default function Hero({ pageInfo }: Props) {
     loop: true,
     delaySpeed: 2000,
   });
+
+  useEffect(() => {
+    setIsClient(true);
+  }, []);
 
   return (
     <div className="h-screen flex flex-col space-y-8 items-center justify-center text-center overflow-hidden">
@@ -34,8 +39,12 @@ export default function Hero({ pageInfo }: Props) {
           {pageInfo?.role}
         </h2>
         <h1 className="text-2xl md:text-5xl lg:text-6xl font-semibold px-10">
-          <span className="mr-3">{text}</span>
-          <Cursor cursorColor="#68B2A0" />
+          {isClient && (
+            <>
+              <span className="mr-3">{text}</span>
+              <Cursor cursorColor="#68B2A0" />
+            </>
+          )}
         </h1>
 
         <div className="pt-5">
