@@ -1,0 +1,52 @@
+/* About Section Styles */
+.about {
+  background-color: var(--color-background);
+}
+
+.about__content {
+  max-width: 800px;
+  margin: 0 auto;
+  font-size: var(--font-size-lg);
+  line-height: 1.8;
+  color: var(--color-text-light);
+}
+
+.about__content p {
+  margin-bottom: var(--spacing-md);
+  text-align: left;
+}
+
+.about__info {
+  margin-top: var(--spacing-xl);
+  padding: var(--spacing-lg);
+  background-color: var(--color-surface);
+  border-radius: var(--border-radius);
+  text-align: left;
+}
+
+.info-item {
+  margin-bottom: var(--spacing-sm);
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-sm);
+}
+
+.info-item:last-child {
+  margin-bottom: 0;
+}
+
+.info-item strong {
+  min-width: 80px;
+  color: var(--color-text);
+}
+
+.info-item a {
+  color: var(--color-primary);
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.info-item a:hover {
+  color: var(--color-primary-dark);
+  text-decoration: underline;
+}

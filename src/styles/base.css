@@ -1,0 +1,36 @@
+/* Base Styles */
+body {
+  font-family: var(--font-family-base);
+  font-size: var(--font-size-base);
+  color: var(--color-text);
+  background-color: var(--color-background);
+}
+
+.container {
+  width: 100%;
+  max-width: var(--container-max-width);
+  margin: 0 auto;
+  padding: 0 var(--spacing-lg);
+}
+
+.section-title {
+  font-size: var(--font-size-3xl);
+  font-weight: var(--font-weight-bold);
+  text-align: center;
+  margin-bottom: var(--spacing-2xl);
+  color: var(--color-text);
+}
+
+section {
+  padding: var(--spacing-3xl) 0;
+}
+
+@media (max-width: 768px) {
+  .section-title {
+    font-size: var(--font-size-2xl);
+  }
+
+  section {
+    padding: var(--spacing-2xl) 0;
+  }
+}

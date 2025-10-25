@@ -1,0 +1,48 @@
+/* Hero Section Styles */
+.hero {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, var(--color-surface) 0%, var(--color-background) 100%);
+  padding-top: var(--header-height);
+}
+
+.hero__content {
+  text-align: center;
+  padding: var(--spacing-xl);
+}
+
+.hero__title {
+  font-size: var(--font-size-4xl);
+  font-weight: var(--font-weight-bold);
+  margin-bottom: var(--spacing-md);
+  color: var(--color-text);
+}
+
+.hero__name {
+  color: var(--color-primary);
+}
+
+.hero__subtitle {
+  font-size: var(--font-size-xl);
+  color: var(--color-text-light);
+  margin-bottom: var(--spacing-xl);
+}
+
+.hero__links {
+  display: flex;
+  gap: var(--spacing-md);
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+@media (max-width: 768px) {
+  .hero__title {
+    font-size: var(--font-size-3xl);
+  }
+
+  .hero__subtitle {
+    font-size: var(--font-size-lg);
+  }
+}
