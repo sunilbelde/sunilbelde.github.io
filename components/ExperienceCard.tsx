@@ -28,16 +28,16 @@ export default function ExperienceCard({ experience }: Props) {
             p-5 md:p-10 transition-all duration-300 hover:shadow-2xl backface-hidden"
         >
           {/* Company Image (XL view) */}
-          <img
-          key={experience._id}
-          src={getImageUrl(experience?.companyImage)}
-          alt={experience?.company}
-          className={`${
+            <img
+            key={experience._id}
+            src={getImageUrl(experience?.companyImage)}
+            alt={experience?.company}
+            className={`${
             experience.company === "Capital One"
-              ? "w-36 h-20 object-contain rounded-xl bg-white p-2"
-              : "w-28 h-28 object-cover rounded-full"
-          } mb-4 md:invisible xl:visible md:h-0 md:w-0 xl:w-[100px] xl:h-[100px]`}
-        />
+              ? "w-28 h-16 object-contain rounded-xl bg-white p-2"
+              : "w-12 h-12 object-cover rounded-full"
+            } mb-4 md:invisible xl:visible md:h-0 md:w-0 xl:w-[80px] xl:h-[80px]`}
+          />
 
 
           {/* Header */}
@@ -114,10 +114,6 @@ export default function ExperienceCard({ experience }: Props) {
               View Key Highlights
               <span className="absolute left-0 bottom-0 w-0 h-[2px] bg-darkGreen transition-all duration-300 group-hover:w-full"></span>
             </p>
-
-
-
-
 
         </article>
 

@@ -1,31 +1,122 @@
-import { motion } from "framer-motion";
-import { Skill as SkillType } from "../typings";
-import Skill from "./Skill";
+"use client";
+import { useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
+import {
+  ChevronDown,
+  ChevronUp,
+  Brain,
+  Network,
+  Database,
+  Code,
+  Cloud,
+  BarChart3,
+} from "lucide-react";
+import { Skill } from "../typings";
 
-type Props = { skills: SkillType[] };
+type Props = { skills: Skill[] };
+
+const iconMap: Record<string, JSX.Element> = {
+  brain: <Brain className="text-darkGreen w-6 h-6" />,
+  network: <Network className="text-darkGreen w-6 h-6" />,
+  database: <Database className="text-darkGreen w-6 h-6" />,
+  code: <Code className="text-darkGreen w-6 h-6" />,
+  cloud: <Cloud className="text-darkGreen w-6 h-6" />,
+  barchart3: <BarChart3 className="text-darkGreen w-6 h-6" />,
+};
 
 export default function Skills({ skills }: Props) {
+  const [openIndex, setOpenIndex] = useState<number | null>(0);
+  const toggleExpand = (idx: number) =>
+    setOpenIndex(openIndex === idx ? null : idx);
+
   return (
     <motion.div
       initial={{ opacity: 0 }}
       whileInView={{ opacity: 1 }}
-      transition={{ duration: 1.5 }}
-      className="h-screen flex relative flex-col text-center md:text-left xl:flex-row max-w-[2000px] xl:px-10 min-h-screen justify-center xl:space-y-0 mx-auto items-center "
+      transition={{ duration: 1 }}
+      className="min-h-screen flex flex-col items-center justify-center px-6 md:px-12 py-12 bg-gradient-to-b from-white to-darkGreen/5"
     >
-      <h3 className="absolute top-20 md:top-24 uppercase tracking-[20px] text-gray-500 text-xl md:text-2xl">
+      <h3 className="uppercase tracking-[20px] text-gray-500 text-2xl mb-12">
         Skills
       </h3>
-      <h3 className="absolute top-32 md:top-36 uppercase tracking-[3px] text-gray-500 text-sm">
-        Hover over a skill for current proficiency
-      </h3>
 
-      <div className="grid grid-cols-4 gap-4 md:gap-5">
-        {skills?.slice(0, skills.length / 2).map((skill) => (
-          <Skill key={skill._id} skill={skill} />
-        ))}
+      {/* Grid layout that isolates each card */}
+      <div
+        className="w-full max-w-6xl grid grid-cols-1 md:grid-cols-2 gap-8"
+        style={{ gridAutoRows: "min-content" }}
+      >
+        {skills.map((category, idx) => (
+          <div key={idx} className="flex flex-col">
+            <motion.div
+              layout="position"
+              className={`bg-white/70 backdrop-blur-sm border border-gray-200 rounded-2xl shadow-md hover:shadow-lg transition-all duration-300 ${
+                openIndex === idx ? "shadow-xl border-darkGreen/30" : ""
+              }`}
+            >
+              {/* Header */}
+              <div
+                onClick={() => toggleExpand(idx)}
+                className="flex justify-between items-center p-6 cursor-pointer select-none"
+              >
+                <div className="flex items-center gap-4">
+                  <div className="bg-lightGreen/20 p-3 rounded-xl">
+                    {iconMap[category.icon] || (
+                      <Brain className="w-6 h-6 text-darkGreen" />
+                    )}
+                  </div>
+                  <div>
+                    <h4 className="text-lg md:text-xl font-semibold text-gray-800">
+                      {category.title}
+                    </h4>
+                    <p className="text-sm text-gray-500">
+                      {category.experience}
+                    </p>
+                  </div>
+                </div>
 
-        {skills?.slice(skills.length / 2, skills.length).map((skill) => (
-          <Skill key={skill._id} skill={skill} directionLeft />
+                {openIndex === idx ? (
+                  <ChevronUp className="text-gray-600" />
+                ) : (
+                  <ChevronDown className="text-gray-600" />
+                )}
+              </div>
+
+              {/* Expandable content */}
+              <AnimatePresence initial={false}>
+                {openIndex === idx && (
+                  <motion.div
+                    key="content"
+                    initial={{ height: 0, opacity: 0 }}
+                    animate={{ height: "auto", opacity: 1 }}
+                    exit={{ height: 0, opacity: 0 }}
+                    transition={{ duration: 0.4 }}
+                    className="px-6 pb-6 space-y-4 overflow-hidden"
+                  >
+                    {category.skills.map((skill, i) => (
+                      <div key={i}>
+                        <div className="flex justify-between mb-1">
+                          <span className="text-gray-700 text-sm font-medium">
+                            {skill.name}
+                          </span>
+                          <span className="text-gray-600 text-sm">
+                            {skill.level}%
+                          </span>
+                        </div>
+                        <div className="w-full bg-gray-200 rounded-full h-2.5">
+                          <motion.div
+                            initial={{ width: 0 }}
+                            whileInView={{ width: `${skill.level}%` }}
+                            transition={{ duration: 1 }}
+                            className="h-2.5 rounded-full bg-gradient-to-r from-green-500 to-darkGreen"
+                          />
+                        </div>
+                      </div>
+                    ))}
+                  </motion.div>
+                )}
+              </AnimatePresence>
+            </motion.div>
+          </div>
         ))}
       </div>
     </motion.div>

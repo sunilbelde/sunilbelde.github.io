@@ -115,136 +115,77 @@ export const mockTechnologies: Technology[] = [
   }
 ];
 
+
 export const mockSkills: Skill[] = [
   {
-    _createdAt: new Date().toISOString(),
-    _id: "skill1",
-    _rev: "1",
-    _updatedAt: new Date().toISOString(),
-    _type: "skill",
-    image: {
-      _type: "image",
-      asset: {
-        _ref: "skill-python",
-        _type: "reference"
-      }
-    },
-    progress: 95,
-    title: "Python"
+    title: "Artificial Intelligence",
+    experience: "≈ 4 Years XP",
+    icon: "brain",
+    skills: [
+      { name: "Large Language Models (Llama, Mistral)", level: 90 },
+      { name: "Prompt Engineering & RAG", level: 88 },
+      { name: "Generative AI Applications", level: 87 },
+      { name: "Few-Shot / Chain-of-Thought Prompting", level: 85 },
+    ],
   },
   {
-    _createdAt: new Date().toISOString(),
-    _id: "skill2",
-    _rev: "1",
-    _updatedAt: new Date().toISOString(),
-    _type: "skill",
-    image: {
-      _type: "image",
-      asset: {
-        _ref: "skill-pytorch",
-        _type: "reference"
-      }
-    },
-    progress: 90,
-    title: "PyTorch"
+    title: "Machine Learning & NLP",
+    experience: "≈ 4 Years XP",
+    icon: "network",
+    skills: [
+      { name: "Text Classification / Sentiment Analysis", level: 88 },
+      { name: "Topic Modeling / Named Entity Recognition", level: 86 },
+      { name: "Model Evaluation & Optimization", level: 85 },
+      { name: "PyTorch / TensorFlow", level: 86 },
+    ],
   },
   {
-    _createdAt: new Date().toISOString(),
-    _id: "skill3",
-    _rev: "1",
-    _updatedAt: new Date().toISOString(),
-    _type: "skill",
-    image: {
-      _type: "image",
-      asset: {
-        _ref: "skill-tensorflow",
-        _type: "reference"
-      }
-    },
-    progress: 88,
-    title: "TensorFlow"
+    title: "Data Engineering & Pipelines",
+    experience: "≈ 3.5 Years XP",
+    icon: "database",
+    skills: [
+      { name: "PySpark / ETL Development", level: 88 },
+      { name: "SQL / PostgreSQL / MongoDB", level: 90 },
+      { name: "Workflow Orchestration (NetworkX, DAGs)", level: 85 },
+      { name: "Data Transformation & Integration", level: 84 },
+    ],
   },
   {
-    _createdAt: new Date().toISOString(),
-    _id: "skill4",
-    _rev: "1",
-    _updatedAt: new Date().toISOString(),
-    _type: "skill",
-    image: {
-      _type: "image",
-      asset: {
-        _ref: "skill-aws",
-        _type: "reference"
-      }
-    },
-    progress: 85,
-    title: "AWS"
+    title: "Software Development",
+    experience: "≈ 4 Years XP",
+    icon: "code",
+    skills: [
+      { name: "Python / Java / Scala", level: 90 },
+      { name: "Spring Boot / REST API Design", level: 84 },
+      { name: "System Design & Architecture", level: 82 },
+      { name: "Testing / CI-CD / Version Control", level: 85 },
+    ],
   },
   {
-    _createdAt: new Date().toISOString(),
-    _id: "skill5",
-    _rev: "1",
-    _updatedAt: new Date().toISOString(),
-    _type: "skill",
-    image: {
-      _type: "image",
-      asset: {
-        _ref: "skill-docker",
-        _type: "reference"
-      }
-    },
-    progress: 82,
-    title: "Docker"
+    title: "Cloud & DevOps",
+    experience: "≈ 3 Years XP",
+    icon: "cloud",
+    skills: [
+      { name: "AWS (EC2, S3, Glue, SageMaker)", level: 86 },
+      { name: "Docker / Kubernetes", level: 84 },
+      { name: "Infrastructure Automation (Helm, YAML)", level: 80 },
+      { name: "Monitoring & Logging (ELK Stack)", level: 80 },
+    ],
   },
   {
-    _createdAt: new Date().toISOString(),
-    _id: "skill6",
-    _rev: "1",
-    _updatedAt: new Date().toISOString(),
-    _type: "skill",
-    image: {
-      _type: "image",
-      asset: {
-        _ref: "skill-kubernetes",
-        _type: "reference"
-      }
-    },
-    progress: 80,
-    title: "Kubernetes"
+    title: "Data Visualization & Tools",
+    experience: "≈ 3 Years XP",
+    icon: "barchart3",
+    skills: [
+      { name: "Tableau / Kibana / Power BI", level: 80 },
+      { name: "Data Analytics & Reporting", level: 85 },
+      { name: "Versioning & Experiment Tracking (MLflow, DVC)", level: 78 },
+      { name: "Documentation & Collaboration (Jupyter, Prodigy)", level: 82 },
+    ],
   },
-  {
-    _createdAt: new Date().toISOString(),
-    _id: "skill7",
-    _rev: "1",
-    _updatedAt: new Date().toISOString(),
-    _type: "skill",
-    image: {
-      _type: "image",
-      asset: {
-        _ref: "skill-pyspark",
-        _type: "reference"
-      }
-    },
-    progress: 85,
-    title: "PySpark"
-  },
-  {
-    _createdAt: new Date().toISOString(),
-    _id: "skill8",
-    _rev: "1",
-    _updatedAt: new Date().toISOString(),
-    _type: "skill",
-    image: {
-      _type: "image",
-      asset: {
-        _ref: "skill-sql",
-        _type: "reference"
-      }
-    },
-    progress: 90,
-    title: "SQL"
-  }
 ];
+
+
 
 export const mockExperiences: Experience[] = [
   {
@@ -274,7 +215,7 @@ export const mockExperiences: Experience[] = [
       "Collaborated cross-functionally to evaluate GenAI research, design trade-offs, and architecture"
     ],
     technologies: [mockTechnologies[0], mockTechnologies[1], mockTechnologies[3], mockTechnologies[4]],
-    tags: ["GenAI","LLMs","ETL Automation"]
+    tags: ["GenAI", "LLMs", "ETL Automation", "RAG", "Prompt Engineering", "Data Engineering", "Python"]
   },
   {
     _createdAt: new Date().toISOString(),
@@ -301,7 +242,7 @@ export const mockExperiences: Experience[] = [
       "Insights contributed to published academic research"
     ],
     technologies: [mockTechnologies[0], mockTechnologies[1], mockTechnologies[2]],
-    tags: ["LLMs","ETL Automation"]
+    tags: ["NLP", "Text Mining", "Transformers", "Data Analysis", "Visualization"]
   },
   {
     _createdAt: new Date().toISOString(),
@@ -328,7 +269,7 @@ export const mockExperiences: Experience[] = [
       "Enhanced OCR quality with custom image preprocessing techniques (denoising, deskewing) to improve text accuracy"
     ],
     technologies: [mockTechnologies[0], mockTechnologies[1]],
-    tags: ["GenAI","LLMs","ETL Automation"]
+    tags: ["Document Intelligence", "OCR", "Computer Vision", "NER", "PyTorch", "Automation"]
   },
   {
     _createdAt: new Date().toISOString(),
@@ -354,7 +295,7 @@ export const mockExperiences: Experience[] = [
       "Built end-to-end ML and NLP projects with real-world datasets and published technical blogs",
     ],
     technologies: [mockTechnologies[0], mockTechnologies[1]],
-    tags: ["GenAI","LLMs","ETL Automation"]
+    tags: ["Machine Learning", "Deep Learning", "NLP", "CV"]
   },
   {
     _createdAt: new Date().toISOString(),
@@ -381,7 +322,7 @@ export const mockExperiences: Experience[] = [
       "Migrated legacy systems to Kubernetes using Helm, reducing deployment overhead and cutting infra costs by 15%"
     ],
     technologies: [mockTechnologies[4]],
-    tags: ["GenAI","LLMs","ETL Automation"]
+    tags: ["Backend Development", "Spring Boot", "Kubernetes", "DevOps", "ELK Stack", "Cloud"]
   }
 ];
 

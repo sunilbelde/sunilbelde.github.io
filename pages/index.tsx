@@ -1,33 +1,27 @@
 import { GetStaticProps } from "next";
 import Head from "next/head";
-import Image from "next/image";
 import Header from "../components/Header";
 import Hero from "../components/Hero";
-import styles from "../styles/Home.module.css";
-import { Experience, PageInfo, Skill, Project, Social } from "../typings";
+import { Experience, PageInfo, Skill, Social } from "../typings";
 import { fetchPageInfo } from "../utils/fetchPageInfo";
 import { fetchExperiences } from "../utils/fetchExperience";
-import { fetchProjects } from "../utils/fetchProjects";
 import { fetchSkills } from "../utils/fetchSkills";
 import { fetchSocials } from "../utils/fetchSocials";
 import About from "../components/About";
 import WorkExperience from "../components/WorkExperience";
 import Skills from "../components/Skills";
-import Projects from "../components/Projects";
 import ContactMe from "../components/ContactMe";
 import Link from "next/link";
 import { HomeIcon } from "@heroicons/react/24/solid";
-import Script from "next/script";
 
 type Props = {
   pageInfo: PageInfo;
   experiences: Experience[];
   skills: Skill[];
-  projects: Project[];
   socials: Social[];
 };
 
-const Home = ({ pageInfo, experiences, projects, skills, socials }: Props) => {
+const Home = ({ pageInfo, experiences, skills, socials }: Props) => {
   return (
     <div
       className="bg-lightBackground text-darkBlack h-screen snap-y snap-mandatory
@@ -107,7 +101,6 @@ export const getStaticProps: GetStaticProps<Props> = async () => {
   const pageInfo = await fetchPageInfo();
   const experiences = await fetchExperiences();
   const skills = await fetchSkills();
-  const projects = await fetchProjects();
   const socials = await fetchSocials();
 
   return {
@@ -115,7 +108,6 @@ export const getStaticProps: GetStaticProps<Props> = async () => {
       pageInfo,
       experiences,
       skills,
-      projects,
       socials,
     },
   };

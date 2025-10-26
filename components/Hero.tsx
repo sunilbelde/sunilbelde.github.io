@@ -1,5 +1,4 @@
 import Link from "next/link";
-import React from "react";
 import { Cursor, useTypewriter } from "react-simple-typewriter";
 import { getImageUrl } from "../utils/imageHelper";
 import { PageInfo } from "../typings";
@@ -8,7 +7,7 @@ import BackgroundCircles from "./BackgroundCircles";
 type Props = { pageInfo: PageInfo };
 
 export default function Hero({ pageInfo }: Props) {
-  const [text, count] = useTypewriter({
+  const [text] = useTypewriter({
     words: [
       `Hello, my name is ${pageInfo?.name}`,
       "I_love_to_code.py",
