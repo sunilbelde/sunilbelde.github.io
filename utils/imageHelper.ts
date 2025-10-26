@@ -26,10 +26,11 @@ export const getImageUrl = (image: Image | undefined): string => {
     "skill-pyspark": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/apachespark/apachespark-original.svg",
     "skill-sql": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original.svg",
     // Companies
-    "company-capitalone": "https://via.placeholder.com/150x150?text=Capital+One",
-    "company-uic": "https://via.placeholder.com/150x150?text=UIC",
-    "company-dockskiff": "https://via.placeholder.com/150x150?text=Dockskiff",
-    "company-acheron": "https://via.placeholder.com/150x150?text=Acheron",
+    "company-capitalone": "https://static.cdnlogo.com/logos/c/97/capital-one.svg",
+    "company-uic": "/uic.svg",
+    "company-docskiff": "/company_docskiff.png",
+    "company-appliedai": "/company_appliedai.png",
+    "company-acheron":"/company_acheron.png",
     // Projects
     "project-genai-etl": "https://via.placeholder.com/600x400?text=GenAI+ETL+Pipeline",
     "project-nlp-analysis": "https://via.placeholder.com/600x400?text=Political+Sentiment+Analysis",

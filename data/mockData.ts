@@ -254,6 +254,7 @@ export const mockExperiences: Experience[] = [
     _updatedAt: new Date().toISOString(),
     _type: "experience",
     company: "Capital One",
+    description: "Leveraging Generative AI and LLMs to revolutionize ETL automation and enhance data engineering workflows.",
     companyImage: {
       _type: "image",
       asset: {
@@ -272,7 +273,8 @@ export const mockExperiences: Experience[] = [
       "Integrated an automated evaluation engine to validate generated code with retry-feedback loops, improving reliability and reducing developer intervention",
       "Collaborated cross-functionally to evaluate GenAI research, design trade-offs, and architecture"
     ],
-    technologies: [mockTechnologies[0], mockTechnologies[1], mockTechnologies[3], mockTechnologies[4]]
+    technologies: [mockTechnologies[0], mockTechnologies[1], mockTechnologies[3], mockTechnologies[4]],
+    tags: ["GenAI","LLMs","ETL Automation"]
   },
   {
     _createdAt: new Date().toISOString(),
@@ -281,6 +283,7 @@ export const mockExperiences: Experience[] = [
     _updatedAt: new Date().toISOString(),
     _type: "experience",
     company: "University of Illinois Chicago",
+    description: "Performed advanced NLP research to extract insights from large-scale social media datasets.",
     companyImage: {
       _type: "image",
       asset: {
@@ -297,7 +300,8 @@ export const mockExperiences: Experience[] = [
       "Implemented scalable preprocessing modules including scraping, text normalization, sentiment analysis, topic modeling (LDA), and visualization with Pandas, Matplotlib, Seaborn",
       "Insights contributed to published academic research"
     ],
-    technologies: [mockTechnologies[0], mockTechnologies[1], mockTechnologies[2]]
+    technologies: [mockTechnologies[0], mockTechnologies[1], mockTechnologies[2]],
+    tags: ["LLMs","ETL Automation"]
   },
   {
     _createdAt: new Date().toISOString(),
@@ -305,11 +309,12 @@ export const mockExperiences: Experience[] = [
     _rev: "1",
     _updatedAt: new Date().toISOString(),
     _type: "experience",
-    company: "Dockskiff (A Jaggaer Company)",
+    company: "Docskiff (A Jaggaer Company)",
+    description: "Engineered intelligent document processing systems to optimize contract metadata extraction.",
     companyImage: {
       _type: "image",
       asset: {
-        _ref: "company-dockskiff",
+        _ref: "company-docskiff",
         _type: "reference"
       }
     },
@@ -322,7 +327,8 @@ export const mockExperiences: Experience[] = [
       "Increased classification throughput by 30% through document segmentation using Faster-RCNN",
       "Enhanced OCR quality with custom image preprocessing techniques (denoising, deskewing) to improve text accuracy"
     ],
-    technologies: [mockTechnologies[0], mockTechnologies[1]]
+    technologies: [mockTechnologies[0], mockTechnologies[1]],
+    tags: ["GenAI","LLMs","ETL Automation"]
   },
   {
     _createdAt: new Date().toISOString(),
@@ -330,7 +336,34 @@ export const mockExperiences: Experience[] = [
     _rev: "1",
     _updatedAt: new Date().toISOString(),
     _type: "experience",
+    company: "Applied AI",
+    description: "Completed an intensive ML program and developed real-world projects in Machine Learning and NLP.",
+    companyImage: {
+      _type: "image",
+      asset: {
+        _ref: "company-appliedai",
+        _type: "reference"
+      }
+    },
+    dateStarted: "2020-05-01" as any,
+    dateEnded: "2021-06-31" as any,
+    isCurrentlyWorkingHere: false,
+    jobTitle: "Machine Learning Intern",
+    points: [
+      "Completed a 12-month ML program with 250+ hours of content and 30+ coding assignments on Machine Learning, Deep Learning, NLP, and CV.",
+      "Built end-to-end ML and NLP projects with real-world datasets and published technical blogs",
+    ],
+    technologies: [mockTechnologies[0], mockTechnologies[1]],
+    tags: ["GenAI","LLMs","ETL Automation"]
+  },
+  {
+    _createdAt: new Date().toISOString(),
+    _id: "exp5",
+    _rev: "1",
+    _updatedAt: new Date().toISOString(),
+    _type: "experience",
     company: "Acheron Software Consultancy",
+    description: "Developed enterprise-grade software solutions and optimized infrastructure for cost efficiency.",
     companyImage: {
       _type: "image",
       asset: {
@@ -347,7 +380,8 @@ export const mockExperiences: Experience[] = [
       "Set up a centralized observability stack using the ELK suite (Elasticsearch, Logstash, Kibana) on GCP",
       "Migrated legacy systems to Kubernetes using Helm, reducing deployment overhead and cutting infra costs by 15%"
     ],
-    technologies: [mockTechnologies[4]]
+    technologies: [mockTechnologies[4]],
+    tags: ["GenAI","LLMs","ETL Automation"]
   }
 ];
 
