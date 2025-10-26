@@ -58,21 +58,20 @@ Builds and deploys the static site to GitHub Pages using gh-pages.
 │   ├── WorkExperience.tsx # Experience timeline
 │   ├── ExperienceCard.tsx # Individual experience card
 │   ├── Skills.tsx         # Skills grid
-│   ├── Skill.tsx          # Individual skill component
-│   ├── Projects.tsx       # Projects showcase
+│   ├── Projects.tsx       # Projects showcase (currently disabled)
 │   ├── ContactMe.tsx      # Contact form
 │   └── BackgroundCircles.tsx # Animated background
+├── data/
+│   └── mockData.ts        # All portfolio data (pageInfo, experiences, skills, etc.)
 ├── utils/
 │   ├── imageHelper.ts     # Image URL mapping utility
-│   ├── fetchPageInfo.ts   # Fetch page metadata
-│   ├── fetchExperience.ts # Fetch work experience
-│   ├── fetchProjects.ts   # Fetch projects
-│   ├── fetchSkills.ts     # Fetch skills
-│   └── fetchSocials.ts    # Fetch social links
+│   └── fetchData.ts       # Unified data fetching functions
 ├── styles/
 │   └── globals.css        # Global Tailwind styles
 ├── public/
 │   ├── profile_pic.png    # Profile picture
+│   ├── full_profile_pic.jpeg # Full profile image
+│   ├── uic.svg            # Company logos
 │   └── ...                # Favicons and static assets
 ├── typings.d.ts           # TypeScript type definitions
 ├── tailwind.config.js     # Tailwind configuration
@@ -92,11 +91,13 @@ All components are built with TypeScript and follow React functional component p
 
 ### Data Fetching
 
-The project uses Next.js's `getStaticProps` for static site generation:
+The project uses Next.js's `getStaticProps` for static site generation with mock data:
 
-- All data fetching happens at build time
-- Data utilities in `utils/` fetch content for each section
+- All data fetching happens at build time using functions from `utils/fetchData.ts`
+- Portfolio data is stored in `data/mockData.ts` (pageInfo, experiences, skills, projects, socials)
+- Each fetch function (fetchPageInfo, fetchExperiences, fetchSkills, fetchProjects, fetchSocials) returns data from mockData
 - Type-safe data structures defined in `typings.d.ts`
+- All fetch functions include a small delay to simulate async behavior
 
 ### Image Management
 
@@ -127,13 +128,18 @@ Framer Motion is used throughout for smooth animations:
 
 ### Updating Content
 
-- **Personal Info**: Contact details in `components/ContactMe.tsx` (line 34, 39, 45)
-- **Page Title**: Update in `pages/index.tsx` (line 55)
-- **Profile Images**: Replace images in `public/` and update `utils/imageHelper.ts`
-- **Social Links**: Modify `utils/fetchSocials.ts`
-- **Work Experience**: Edit `utils/fetchExperience.ts`
-- **Projects**: Edit `utils/fetchProjects.ts`
-- **Skills**: Edit `utils/fetchSkills.ts`
+All portfolio content is centralized in `data/mockData.ts`. Update the following:
+
+- **Personal Info**: Edit `mockPageInfo` in `data/mockData.ts` (name, role, email, phone, address, bio)
+- **Work Experience**: Edit `mockExperiences` array in `data/mockData.ts`
+- **Skills**: Edit `mockSkills` array in `data/mockData.ts`
+- **Technologies**: Edit `mockTechnologies` array in `data/mockData.ts`
+- **Projects**: Edit `mockProjects` array in `data/mockData.ts`
+- **Social Links**: Edit `mockSocials` array in `data/mockData.ts`
+- **Page Title**: Update in `pages/index.tsx` (line 51)
+- **Images**: Add images to `public/` and map references in `utils/imageHelper.ts`
+
+Note: The Projects section is currently commented out in `pages/index.tsx:78-80` but the component and data are available.
 
 ### Styling Changes
 
@@ -145,9 +151,26 @@ Framer Motion is used throughout for smooth animations:
 
 1. Create component in `components/`
 2. Add TypeScript types in `typings.d.ts` if needed
-3. Create data fetch utility in `utils/` if needed
-4. Add section to `pages/index.tsx`
-5. Style with Tailwind CSS
+3. Add mock data to `data/mockData.ts`
+4. Create fetch function in `utils/fetchData.ts` if needed
+5. Add section to `pages/index.tsx`
+6. Update `getStaticProps` in `pages/index.tsx` to fetch the new data
+7. Style with Tailwind CSS
+
+### Data Structure
+
+**Skills**: The Skill interface represents skill categories with multiple sub-skills:
+```typescript
+{
+  title: string;           // e.g., "Artificial Intelligence"
+  experience: string;      // e.g., "≈ 4 Years XP"
+  icon: string;           // Icon identifier
+  skills: SkillItem[];    // Array of individual skills with name and level
+}
+```
+
+**Experiences**: Each experience includes technologies, tags, and detailed points
+**Technologies**: Reusable technology objects with images and progress levels
 
 ## Deployment
 
