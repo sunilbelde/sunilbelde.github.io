@@ -37,13 +37,13 @@ export default function WorkExperience({ experiences }: Props) {
             ))}
         </div>
 
-        {/* Faded Animated Arrow Icon (center right) */}
+        {/* Scroll Indicator Arrow (center right) */}
         <motion.div
-          className="absolute right-5 top-1/2 transform -translate-y-1/2 text-darkGreen-40 z-20"
-          animate={{ x: [0, 8, 0], opacity: [0.4, 0.9, 0.4] }}
-          transition={{ repeat: Infinity, duration: 1.5 }}
+          className="absolute right-5 top-1/2 transform -translate-y-1/2 z-20 pointer-events-none"
+          animate={{ x: [0, 10, 0], opacity: [0.5, 0.9, 0.5] }}
+          transition={{ repeat: Infinity, duration: 1.8, ease: "easeInOut" }}
         >
-          <ChevronRight size={32} strokeWidth={2.5} />
+          <ChevronRight size={36} strokeWidth={3} className="text-lightGreen drop-shadow-lg" />
         </motion.div>
       </div>
     </motion.div>
