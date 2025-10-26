@@ -1,0 +1,142 @@
+\documentclass{resume} % Use the custom resume.cls style
+
+\usepackage[left=0.5 in,top=0.5 in,right=0.5 in,bottom=0.5 in]{geometry} % Document margins
+\usepackage{hyperref}
+\usepackage{fontawesome}
+\newcommand{\tab}[1]{\hspace{.2667\textwidth}\rlap{#1}} 
+\newcommand{\itab}[1]{\hspace{0em}\rlap{#1}}
+\name{SUNIL BELDE} % Your name
+% You can merge both of these into a single line, if you do not have a website.
+\vspace{0.5em}
+\address{
+\faMobile~\href{https://wa.me/19452444371}{(945)-244-4371} \quad
+\faEnvelope~\href{mailto:sunil.belde102@gmail.com}{sunil.belde102@gmail.com} \\
+\faLinkedinSquare~\href{https://www.linkedin.com/in/sunil-belde-1b4151129/}{LinkedIn} \quad
+\faGithub~\href{https://github.com/sunilbelde}{GitHub} \quad
+\faGlobe~\href{https://sites.google.com/view/sunilbelde}{Portfolio}
+\faMedium~\href{https://medium.com/@sunil-belde102}{Medium}
+}
+
+
+
+%
+\begin{document}
+%----------------------------------------------------------------------------------------
+%	EDUCATION SECTION
+%----------------------------------------------------------------------------------------
+\vspace{0.0 em}
+
+\begin{rSection}{EDUCATION}
+
+{\bf University of Illinois Chicago} \textit{, Chicago, IL} \\
+\textit{M.S in Computer Science} \hfill \textit{Aug 2022 – May 2024} \\
+\vspace{-0.3em}
+{\bf VNR VJIET} \textit{, Hyderabad, India} \\
+\textit{B.Tech in Electronics and Communication Engineering} \hfill \textit{Aug 2015 – Jun 2019}
+
+\end{rSection}
+
+\vspace{-0.2em}
+%----------------------------------------------------------------------------------------
+% TECHINICAL STRENGTHS	
+%----------------------------------------------------------------------------------------
+\begin{rSection}{TECHNICAL SKILLS}
+\textbf{Programming Languages}: Python, Java, Pyspark, SQL, Bash \\
+\textbf{Machine Learning \& GenAI}: Transformers, TensorFlow, PyTorch, LLMs (Llama, Mistral), Prompt Engineering, RAG \\
+\textbf{Data Engineering \& Pipelines}:  LlamaIndex, LangChain, SimSearch, MLflow, DVC, Jinja2, NetworkX \\
+\textbf{Cloud \& DevOps}: AWS (EC2, S3, Lambda, SageMaker, Glue, CloudWatch), GCP, Docker, Kubernetes, Git, CI/CD \\
+\textbf{Backend \& Web Development}: Spring Boot, REST APIs, MySQL, Angular 8 \\
+\textbf{Databases \& Storage}: PostgreSQL, MongoDB, Elasticsearch, Vector Databases \\
+\textbf{Tools \& Platforms}: Jupyter Notebook, VS Code, Tableau, Kibana, Prodigy
+\end{rSection}
+
+\vspace{-0.2em}
+%----------------------------------------------------------------------------------------
+%	WORK EXPERIENCE SECTION
+%----------------------------------------------------------------------------------------
+\begin{rSection}{EXPERIENCE} 
+
+\textbf{Capital One, ML Engineer – GenAI/LLM Automation}, \textit{Chicago, IL} \hfill Jul 2024 – Present
+\vspace{-0.5em}  % Reduce space before itemize
+
+\begin{itemize}
+  \item Built a \textbf{GenAI-powered platform} that auto-generates end-to-end \textbf{ETL pipeline code} (PySpark/Scala) deployable via GitHub, enabling business users with SQL knowledge to build production-grade data pipelines through a UI.
+  \item Designed modular pipeline components (\textbf{Source, Joiner, Filter, Transform, Target}) and orchestrated them with DAG logic using Python and NetworkX, improving maintainability and reusability.
+
+  \item Implemented a \textbf{Retrieval-Augmented Generation (RAG)} system using \textbf{SimSearch} and \textbf{LlamaIndex} for context-aware prompt injection; used \textbf{Few-Shot} and \textbf{Chain-of-Thought prompting} to guide \textbf{LLM-based code generation}.
+
+  \item Integrated an automated \textbf{evaluation engine} to validate generated code with \textbf{retry-feedback loops}, improving reliability and reducing developer intervention.
+
+  \item Collaborated cross-functionally to evaluate \textbf{GenAI research}, design trade-offs, and architecture; contributed to discussions on \textbf{prompt strategies}, \textbf{code generation quality}, and roadmap decisions for pipeline automation.
+\end{itemize}
+
+
+\vspace{-0.4em}
+\textbf{University of Illinois Chicago, Graduate Research Assistant}, \textit{Chicago, IL} \hfill Jan 2023 – May 2024
+\vspace{-0.5em}  % Reduce space before itemize
+
+\begin{itemize}
+\itemsep -3pt {}
+    \item Built end-to-end \textbf{NLP pipelines} using \textbf{HuggingFace Transformers}, \textbf{SpaCy}, and \textbf{scikit-learn} to analyze political trends from \textbf{10M+ tweets}; insights contributed to published academic research.
+    \item Implemented scalable preprocessing modules including \textbf{scraping}, \textbf{text normalization}, \textbf{sentiment analysis}, \textbf{topic modeling} (LDA), and visualization with \textbf{Pandas, Matplotlib, Seaborn}.
+\end{itemize}
+
+
+\vspace{-0.4em}
+\textbf{Dockskiff – A Jaggaer Company, Machine Learning Engineer}, \textit{Hyderabad, India} \hfill Jun 2021 – Jul 2022
+\vspace{-0.5em}  % Reduce space before itemize
+
+\begin{itemize}
+\itemsep -3pt {}
+    \item Built \textbf{document intelligence pipelines} combining \textbf{NER}, \textbf{OCR}, and NLP to extract contract metadata using \textbf{PyTorch}, \textbf{Tesseract}, and regex-based postprocessing.
+    \item Increased classification throughput by \textbf{30\%} through document segmentation using \textbf{Faster-RCNN}.
+    \item Enhanced OCR quality with custom \textbf{image preprocessing} techniques (denoising, deskewing) to improve text accuracy.
+\end{itemize}
+
+\vspace{-0.4em}
+\textbf{Applied AI Program, Machine Learning Trainee} \textit{(Remote)} \hfill Apr 2020 – Jun 2021  
+\vspace{-0.5em}  % Reduce space before itemize
+
+\begin{itemize}
+    \itemsep -3pt {}
+    \item Completed a 12-month ML program with 250+ hours of content and 30+ coding assignments on \textbf{Machine Learning}, \textbf{Deep Learning}, \textbf{NLP}, and \textbf{CV}.
+    \item Built end-to-end ML and NLP projects with real-world datasets and published technical blogs — see  \href{https://medium.com/@sunil-belde102}{\textbf{Blogs}}.
+\end{itemize}
+
+
+
+\vspace{-0.4em}
+\textbf{Acheron Software Consultancy Pvt Ltd, Associate Software Developer}, \textit{Hyderabad, India} \hfill Jan 2019 – Apr 2020
+\vspace{-0.5em}  % Reduce space before itemize
+
+\begin{itemize}
+\itemsep -3pt {}
+    \item Transitioned from a \textbf{DevOps Intern} to full-time engineer; contributed to app development, deployment automation, and infrastructure monitoring.
+    \item Built enterprise-grade applications using \textbf{Spring Boot}, \textbf{MySQL}, and \textbf{Angular 8}, delivering production-ready backend APIs and responsive UIs.
+    \item Set up a centralized \textbf{observability stack} using the \textbf{ELK suite} (Elasticsearch, Logstash, Kibana) on \textbf{GCP}, improving logging and diagnostics.
+    \item Migrated legacy systems to \textbf{Kubernetes} using \textbf{Helm}, reducing deployment overhead and cutting infra costs by \textbf{15\%}.
+\end{itemize}
+
+
+
+\end{rSection}
+
+
+
+\vspace{-0.2em}
+%----------------------------------------------------------------------------------------
+%	CERTIFICATIONS
+%----------------------------------------------------------------------------------------
+\begin{rSection}{CERTIFICATIONS}
+\textbf{AWS Solutions Architect – Associate} \hfill Issued by Amazon Web Services \\
+\textbf{Applied AI – Machine Learning Certification} \hfill Apr 2020 – Jun 2021 \\
+\textbf{Building Chatbots with Watson and Python (IBM)} \hfill Issued by IBM \\
+
+\end{rSection}
+
+
+
+
+
+%\end{rSection} 
+\end{document}
