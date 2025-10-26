@@ -7,7 +7,11 @@ export const mockPageInfo: PageInfo = {
   _updatedAt: new Date().toISOString(),
   _type: "pageInfo",
   address: "Chicago, IL",
-  backgroundInformation: "ML Engineer specializing in GenAI/LLM automation with experience building production-grade data pipelines and intelligent systems. I combine expertise in machine learning, data engineering, and cloud infrastructure to solve complex problems. My background spans from document intelligence and NLP research to building GenAI-powered platforms that enable business users to create ETL pipelines through natural language.",
+  backgroundInformation: `
+  I’m an ML Engineer 🤖 specializing in Generative AI and LLM-driven automation, with experience designing and deploying production-grade data pipelines and intelligent systems. My work bridges machine learning 🧠, data engineering ⚙️, and cloud infrastructure ☁️ — enabling scalable, efficient, and explainable AI solutions.
+
+  I’ve contributed to projects ranging from document intelligence 📄 and NLP research 💬 to building Generative AI platforms that empower business users to create and manage ETL pipelines through natural language. I’m passionate about transforming how humans interact with data 🌍 — making complex technical workflows accessible, adaptive, and intelligent ✨.
+    `,
   email: "sunil.belde102@gmail.com",
   role: "ML Engineer - GenAI/LLM Automation",
   heroImage: {

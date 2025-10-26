@@ -71,8 +71,8 @@ const Home = ({ pageInfo, experiences, projects, skills, socials }: Props) => {
       {/* Header */}
       <Header socials={socials} />
 
-      {/* Hero */}
-      <section id="hero" className="snap-start">
+      {/* Home */}
+      <section id="home" className="snap-start">
         <Hero pageInfo={pageInfo} />
       </section>
 
@@ -101,7 +101,7 @@ const Home = ({ pageInfo, experiences, projects, skills, socials }: Props) => {
         <ContactMe />
       </section>
 
-      <Link href="#hero">
+      <Link href="#home">
         <footer className="sticky bottom-5 w-full cursor-pointer">
           <div className="flex items-center justify-center">
             <div className="h-10 w-10 bg-darkGreen/80 rounded-full flex items-center justify-center">

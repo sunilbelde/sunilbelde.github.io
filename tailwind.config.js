@@ -16,6 +16,9 @@ module.exports = {
         grayColor: "#22262D",
         yellowColor: "FFE033",
       },
+      backgroundImage: {
+        'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
+      },
     },
   },
   plugins: [require("tailwind-scrollbar")],
