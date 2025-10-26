@@ -52,11 +52,11 @@ export default function Header({ socials }: Props) {
           transition={{
             duration: 1.5,
           }}
-          className="flex flex-row items-center text-gray-300 cursor-pointer"
+          className="flex flex-row items-center text-textSecondary cursor-pointer"
         >
-          <div className="h-12 w-12 rounded-full bg-transparent border-2 border-gray-500 flex items-center justify-center">
+          <div className="h-12 w-12 rounded-full bg-transparent border-2 border-borderLight flex items-center justify-center">
             <svg
-              className="h-6 w-6 text-gray-400"
+              className="h-6 w-6 text-textSecondary"
               fill="none"
               stroke="currentColor"
               viewBox="0 0 24 24"
@@ -69,7 +69,7 @@ export default function Header({ socials }: Props) {
               />
             </svg>
           </div>
-          <p className="uppercase hidden md:inline-flex text-sm text-gray-400 ml-2">
+          <p className="uppercase hidden md:inline-flex text-sm text-textSecondary ml-2">
             Get in touch
           </p>
         </motion.div>

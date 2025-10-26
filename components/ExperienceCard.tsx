@@ -24,7 +24,8 @@ export default function ExperienceCard({ experience }: Props) {
         {/* FRONT SIDE */}
         <article
           className="absolute inset-0 flex flex-col items-center rounded-3xl
-            drop-shadow-xl bg-gradient-to-tr from-white to-darkGreen/20
+            drop-shadow-xl bg-gradient-to-tr from-secondary to-lightGreen-10
+            border border-borderLight
             p-5 md:p-10 transition-all duration-300 hover:shadow-2xl backface-hidden"
         >
           {/* Company Image (XL view) */}
@@ -44,13 +45,13 @@ export default function ExperienceCard({ experience }: Props) {
           <div className="w-full px-0 md:px-10">
             <div className="md:flex md:justify-between items-center">
               <div>
-                <h4 className="text-lg md:text-3xl font-light text-black">
+                <h4 className="text-lg md:text-3xl font-light text-textPrimary">
                   {experience?.jobTitle}
                 </h4>
                 <p className="font-bold text-md md:text-2xl mt-1 text-lightGreen">
                   {experience?.company}
                 </p>
-                <p className="text-gray-600 text-sm md:text-base mt-2 italic">
+                <p className="text-textSecondary text-sm md:text-base mt-2 italic">
                   {experience?.description}
                 </p>
 
@@ -69,7 +70,7 @@ export default function ExperienceCard({ experience }: Props) {
                 {experience?.tags?.map((tag) => (
                   <span
                   key={tag}
-                  className="bg-darkGreen/10 text-darkGreen text-xs px-4 py-2 rounded-full"
+                  className="bg-darkGreen-10 text-darkGreen text-xs px-4 py-2 rounded-full"
                   >
                   {tag}
                   </span>
@@ -91,13 +92,13 @@ export default function ExperienceCard({ experience }: Props) {
 
             {/* Dates */}
             <div className="space-y-1"></div>
-              <p className="uppercase py-2 md:py-5 text-gray-500 text-sm md:text-lg">
+              <p className="uppercase py-2 md:py-5 text-textSecondary text-sm md:text-lg">
               {new Date(experience?.dateStarted).toLocaleDateString('en-US', { month: 'short', year: 'numeric' })} –{' '}
               {experience.isCurrentlyWorkingHere
               ? 'Present'
               : new Date(experience?.dateEnded).toLocaleDateString('en-US', { month: 'short', year: 'numeric' })}
               </p>
-                <span className="absolute top-5 right-5 bg-lightGreen/20 text-darkGreen text-base md:text-lg font-medium px-6 py-2 rounded-full">
+                <span className="absolute top-5 right-5 bg-lightGreen-20 text-darkGreen text-base md:text-lg font-medium px-6 py-2 rounded-full">
                 {(() => {
                 const start = new Date(experience.dateStarted);
                 const end = experience.isCurrentlyWorkingHere ? new Date() : new Date(experience.dateEnded);
@@ -119,16 +120,17 @@ export default function ExperienceCard({ experience }: Props) {
 
         {/* BACK SIDE */}
         <article
-          className="absolute inset-0 rounded-3xl p-5 md:p-10 
-            bg-gradient-to-tr from-white to-darkGreen/20
-            drop-shadow-xl flex flex-col justify-start items-start 
+          className="absolute inset-0 rounded-3xl p-5 md:p-10
+            bg-gradient-to-tr from-secondary to-lightGreen-10
+            border border-borderLight
+            drop-shadow-xl flex flex-col justify-start items-start
             [transform:rotateY(180deg)] backface-hidden overflow-hidden"
         >
           <h3 className="text-lg md:text-2xl font-semibold mb-4 text-darkGreen">
             Key Highlights
           </h3>
 
-          <ul className="list-disc text-black text-sm md:text-lg space-y-3 pl-5 pr-2 overflow-y-auto scrollbar-thin scrollbar-thumb-darkGreen/60 scrollbar-track-gray-100">
+          <ul className="list-disc text-textPrimary text-sm md:text-lg space-y-3 pl-5 pr-2 overflow-y-auto scrollbar-thin scrollbar-thumb-darkGreen-60 scrollbar-track-borderLight">
             {experience?.points.map((point, i) => (
               <motion.li
                 key={i}

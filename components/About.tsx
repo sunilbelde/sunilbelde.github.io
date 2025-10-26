@@ -18,7 +18,7 @@ export default function About({ pageInfo }: Props) {
         initial={{ opacity: 0, y: -20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 1, delay: 0.3 }}
-        className="absolute top-20 md:top-24 uppercase tracking-[16px] md:tracking-[20px] text-gray-400 text-lg md:text-2xl font-semibold"
+        className="absolute top-20 md:top-24 uppercase tracking-[16px] md:tracking-[20px] text-textSecondary text-lg md:text-2xl font-semibold"
       >
         About
       </motion.h3>
@@ -50,7 +50,7 @@ export default function About({ pageInfo }: Props) {
       >
         <h4 className="text-xl md:text-4xl font-semibold leading-tight">
           Here is a{" "}
-          <span className="underline decoration-gray-400/50">little</span>{" "}
+          <span className="underline decoration-textSecondary/50">little</span>{" "}
           background
         </h4>
 
@@ -59,7 +59,7 @@ export default function About({ pageInfo }: Props) {
         .map((para, idx) => (
           <p
             key={idx}
-            className="text-sm md:text-lg text-slate-700 leading-relaxed text-justify mb-5"
+            className="text-sm md:text-lg text-textSecondary leading-relaxed text-justify mb-5"
           >
             {para.trim()}
           </p>

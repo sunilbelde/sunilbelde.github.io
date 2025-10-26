@@ -1,12 +1,16 @@
+"use client";
 import Link from "next/link";
 import { Cursor, useTypewriter } from "react-simple-typewriter";
 import { getImageUrl } from "../utils/imageHelper";
 import { PageInfo } from "../typings";
 import BackgroundCircles from "./BackgroundCircles";
+import { useTheme } from "../utils/ThemeContext";
 
 type Props = { pageInfo: PageInfo };
 
 export default function Hero({ pageInfo }: Props) {
+  const { theme } = useTheme();
+
   const [text] = useTypewriter({
     words: [
       `Hello, my name is ${pageInfo?.name}`,
@@ -16,6 +20,9 @@ export default function Hero({ pageInfo }: Props) {
     loop: true,
     delaySpeed: 2000,
   });
+
+  // Theme-aware cursor color
+  const cursorColor = theme === 'light' ? '#469687' : '#68B2A0';
 
   return (
     <div className="h-screen flex flex-col space-y-8 items-center justify-center text-center overflow-hidden">
@@ -28,12 +35,12 @@ export default function Hero({ pageInfo }: Props) {
       />
 
       <div className="z-20">
-        <h2 className="text-sm uppercase text-gray-500 pb-2 tracking-[4px] md:tracking-[6px] font-bold">
+        <h2 className="text-sm uppercase text-textSecondary pb-2 tracking-[4px] md:tracking-[6px] font-bold">
           {pageInfo?.role}
         </h2>
         <h1 className="text-2xl md:text-5xl lg:text-6xl font-semibold px-10">
           <span className="mr-3">{text}</span>
-          <Cursor cursorColor="#68B2A0" />
+          <Cursor cursorColor={cursorColor} />
         </h1>
 
         <div className="pt-5 flex flex-wrap items-center justify-center gap-4">

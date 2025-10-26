@@ -2,15 +2,111 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Theme Variables */
+:root[data-theme="dark"] {
+  /* Background Colors */
+  --bg-primary: rgb(36, 36, 36);
+  --bg-secondary: rgb(28, 28, 30);
+  --bg-light: rgb(34, 38, 45);
+
+  /* Text Colors */
+  --text-primary: rgb(229, 229, 231);
+  --text-secondary: rgb(156, 163, 175);
+  --text-muted: rgb(107, 114, 128);
+
+  /* Border Colors */
+  --border-color: rgb(75, 85, 99);
+  --border-light: rgb(55, 65, 81);
+
+  /* Brand Colors */
+  --color-light-green: 104, 178, 160;
+  --color-dark-green: 44, 105, 117;
+  --color-accent: 104, 178, 160;
+
+  /* Utility Colors */
+  --color-black: 0, 0, 0;
+  --color-gray: 34, 38, 45;
+  --color-yellow: 255, 224, 51;
+}
+
+:root[data-theme="light"] {
+  /* Background Colors */
+  --bg-primary: rgb(255, 255, 255);
+  --bg-secondary: rgb(249, 250, 251);
+  --bg-light: rgb(243, 244, 246);
+
+  /* Text Colors */
+  --text-primary: rgb(17, 24, 39);
+  --text-secondary: rgb(75, 85, 99);
+  --text-muted: rgb(156, 163, 175);
+
+  /* Border Colors */
+  --border-color: rgb(209, 213, 219);
+  --border-light: rgb(229, 231, 235);
+
+  /* Brand Colors - Slightly adjusted for light theme visibility */
+  --color-light-green: 70, 150, 135;
+  --color-dark-green: 30, 90, 100;
+  --color-accent: 70, 150, 135;
+
+  /* Utility Colors */
+  --color-black: 17, 24, 39;
+  --color-gray: 107, 114, 128;
+  --color-yellow: 234, 179, 8;
+}
+
+/* Default to dark theme */
+:root {
+  /* Background Colors */
+  --bg-primary: rgb(36, 36, 36);
+  --bg-secondary: rgb(28, 28, 30);
+  --bg-light: rgb(34, 38, 45);
+
+  /* Text Colors */
+  --text-primary: rgb(229, 229, 231);
+  --text-secondary: rgb(156, 163, 175);
+  --text-muted: rgb(107, 114, 128);
+
+  /* Border Colors */
+  --border-color: rgb(75, 85, 99);
+  --border-light: rgb(55, 65, 81);
+
+  /* Brand Colors */
+  --color-light-green: 104, 178, 160;
+  --color-dark-green: 44, 105, 117;
+  --color-accent: 104, 178, 160;
+
+  /* Utility Colors */
+  --color-black: 0, 0, 0;
+  --color-gray: 34, 38, 45;
+  --color-yellow: 255, 224, 51;
+}
+
+body {
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
 @layer components {
   .heroButton {
-    @apply px-3 md:px-6 py-2 border border-[#242424] rounded-full uppercase text-xs tracking-widest text-gray-500 transition-all hover:border-darkGreen/40 hover:text-darkGreen/40;
+    @apply px-3 md:px-6 py-2 border rounded-full uppercase text-xs tracking-widest transition-all
+           border-borderLight text-textSecondary
+           hover:border-darkGreen-40 hover:text-darkGreen;
   }
 
   .contactInput {
-    @apply outline-none bg-slate-400/20 rounded-lg border-b-2 px-6 py-3 md:py-4 text-gray-500 placeholder-gray-600 transition-all
-           focus:border-darkGreen focus:text-darkGreen focus:ring-2 focus:ring-darkGreen/30 focus:ring-offset-2
-           hover:border-darkGreen/40;
+    @apply outline-none rounded-lg border-b-2 px-6 py-3 md:py-4 transition-all
+           border-borderLight
+           text-textSecondary placeholder-textMuted
+           focus:border-darkGreen focus:text-darkGreen focus:ring-2 focus:ring-offset-2
+           hover:border-darkGreen;
+    background-color: var(--bg-secondary);
+    opacity: 0.9;
+  }
+
+  .contactInput:focus {
+    opacity: 1;
   }
 }
 .backface-hidden {
