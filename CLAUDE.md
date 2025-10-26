@@ -4,7 +4,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Project Overview
 
-This is a personal portfolio website built with vanilla JavaScript, HTML, and CSS. The project uses Vite as a development server and build tool for fast development and optimized production builds.
+This is a personal portfolio website built with **Next.js 16**, **TypeScript**, **Tailwind CSS**, and **Framer Motion**. The project is configured for static export to GitHub Pages.
 
 ## Development Commands
 
@@ -12,128 +12,177 @@ This is a personal portfolio website built with vanilla JavaScript, HTML, and CS
 ```bash
 npm run dev
 ```
-Starts Vite dev server on `http://localhost:3000` with hot module reloading.
+Starts Next.js dev server on `http://localhost:3000` with hot module reloading.
 
 ### Building for Production
 ```bash
 npm run build
 ```
-Creates optimized production build in `dist/` directory.
+Creates optimized static export in `out/` directory.
 
-### Preview Production Build
+### Starting Production Server
 ```bash
-npm run preview
+npm start
 ```
-Serves the production build locally for testing before deployment.
+Starts the Next.js production server.
 
-### Code Quality
+### Deploy to GitHub Pages
 ```bash
-npm run format     # Format code with Prettier
-npm run lint:css   # Lint CSS files with Stylelint
+npm run deploy
 ```
+Builds and deploys the static site to GitHub Pages using gh-pages.
 
 ## Architecture
 
-### CSS Architecture (Modular CSS)
+### Tech Stack
 
-The project uses a modular CSS architecture with separate files for different concerns:
-
-- **Entry Point**: `src/styles/main.css` imports all CSS modules
-- **Foundation**:
-  - `reset.css` - CSS reset for consistent cross-browser styling
-  - `variables.css` - CSS custom properties (colors, spacing, typography, etc.)
-  - `base.css` - Base styles and common layout patterns
-- **Components**: `src/styles/components/` contains scoped styles for each UI component
-  - Each component has its own CSS file (e.g., `header.css`, `nav.css`, `hero.css`)
-  - Component classes use BEM-like naming (e.g., `.nav__menu`, `.hero__title`)
-- **Utilities**: `utilities.css` provides utility classes for spacing and alignment
-
-**Adding New Components**:
-1. Create component CSS file in `src/styles/components/`
-2. Import it in `src/styles/main.css`
-3. Use consistent naming conventions (component__element pattern)
-
-### JavaScript Architecture
-
-The project follows a component-based JavaScript architecture:
-
-- **Entry Point**: `src/js/main.js` initializes all components
-- **Components**: `src/js/components/` contains individual feature modules
-  - Each component is a self-contained module with init function
-  - Components handle their own DOM manipulation and event listeners
-- **Data**: `src/js/data/` contains static data files for projects and skills
-  - Export data as named exports for easy importing
-
-**Adding New Components**:
-1. Create component file in `src/js/components/`
-2. Export an initialization function (e.g., `export function initComponentName()`)
-3. Import and call it in `src/js/main.js`
+- **Framework**: Next.js 16 (static export mode)
+- **Language**: TypeScript
+- **Styling**: Tailwind CSS with custom configuration
+- **Animations**: Framer Motion
+- **Icons**: Heroicons, React Social Icons
+- **Forms**: React Hook Form
+- **Type Animation**: React Simple Typewriter
 
 ### Project Structure
 
 ```
 /
-├── index.html              # Main HTML entry point
-├── src/
-│   ├── js/
-│   │   ├── main.js        # JS entry point
-│   │   ├── components/    # Feature modules (navigation, projects, etc.)
-│   │   └── data/          # Static data files
-│   └── styles/
-│       ├── main.css       # CSS entry point (imports all modules)
-│       ├── reset.css      # CSS reset
-│       ├── variables.css  # CSS custom properties
-│       ├── base.css       # Base styles
-│       ├── components/    # Component-specific styles
-│       └── utilities.css  # Utility classes
-├── vite.config.js         # Vite configuration
+├── pages/
+│   ├── index.tsx          # Main page component
+│   └── _app.tsx           # Next.js app wrapper
+├── components/
+│   ├── Header.tsx         # Navigation header
+│   ├── Hero.tsx           # Hero section with typewriter
+│   ├── About.tsx          # About section
+│   ├── WorkExperience.tsx # Experience timeline
+│   ├── ExperienceCard.tsx # Individual experience card
+│   ├── Skills.tsx         # Skills grid
+│   ├── Skill.tsx          # Individual skill component
+│   ├── Projects.tsx       # Projects showcase
+│   ├── ContactMe.tsx      # Contact form
+│   └── BackgroundCircles.tsx # Animated background
+├── utils/
+│   ├── imageHelper.ts     # Image URL mapping utility
+│   ├── fetchPageInfo.ts   # Fetch page metadata
+│   ├── fetchExperience.ts # Fetch work experience
+│   ├── fetchProjects.ts   # Fetch projects
+│   ├── fetchSkills.ts     # Fetch skills
+│   └── fetchSocials.ts    # Fetch social links
+├── styles/
+│   └── globals.css        # Global Tailwind styles
+├── public/
+│   ├── profile_pic.png    # Profile picture
+│   └── ...                # Favicons and static assets
+├── typings.d.ts           # TypeScript type definitions
+├── tailwind.config.js     # Tailwind configuration
+├── next.config.js         # Next.js configuration
 └── package.json
 ```
 
 ## Key Design Patterns
 
-### CSS Custom Properties
-All design tokens (colors, spacing, typography) are defined as CSS variables in `variables.css`. Update these variables to change the design system globally.
+### Component Architecture
 
-### Responsive Design
-- Mobile-first approach with breakpoint at 768px
-- Navigation transforms to mobile menu below 768px
-- Grid layouts use `auto-fill` for responsive columns
+All components are built with TypeScript and follow React functional component patterns:
 
-### Dark Mode Support
-The site includes dark mode support via `prefers-color-scheme` media query in `variables.css`. Dark mode variables automatically apply based on user's system preference.
+- Components use typed props with TypeScript interfaces
+- Framer Motion is used for animations and transitions
+- Components are self-contained and reusable
 
-### Component Initialization
-All interactive components follow the same pattern:
-1. Export an `init` function from the component module
-2. Function queries required DOM elements
-3. Early return if elements don't exist (graceful degradation)
-4. Attach event listeners and set up component behavior
+### Data Fetching
+
+The project uses Next.js's `getStaticProps` for static site generation:
+
+- All data fetching happens at build time
+- Data utilities in `utils/` fetch content for each section
+- Type-safe data structures defined in `typings.d.ts`
+
+### Image Management
+
+Images are managed through the `imageHelper.ts` utility:
+
+- Maps image references to URLs
+- Supports local images in `/public` directory
+- Uses CDN (jsdelivr) for technology icons
+- Placeholder images for missing assets
+
+### Styling
+
+- **Tailwind CSS**: Utility-first CSS framework
+- **Custom Colors**: Defined in `tailwind.config.js` (darkGreen, lightGreen, etc.)
+- **Responsive Design**: Mobile-first with Tailwind breakpoints (sm, md, lg, xl, 2xl)
+- **Custom Scrollbar**: Tailwind scrollbar plugin for styled scrollbars
+
+### Animations
+
+Framer Motion is used throughout for smooth animations:
+
+- Page transitions
+- Scroll-triggered animations with `whileInView`
+- Stagger effects for lists
+- Hover and tap interactions
 
 ## Customization
 
 ### Updating Content
-- **Personal Info**: Edit text in `index.html`
-- **Projects**: Modify `src/js/data/projects.js`
-- **Skills**: Modify `src/js/data/skills.js`
+
+- **Personal Info**: Contact details in `components/ContactMe.tsx` (line 34, 39, 45)
+- **Page Title**: Update in `pages/index.tsx` (line 55)
+- **Profile Images**: Replace images in `public/` and update `utils/imageHelper.ts`
+- **Social Links**: Modify `utils/fetchSocials.ts`
+- **Work Experience**: Edit `utils/fetchExperience.ts`
+- **Projects**: Edit `utils/fetchProjects.ts`
+- **Skills**: Edit `utils/fetchSkills.ts`
 
 ### Styling Changes
-- **Colors/Spacing**: Update CSS variables in `src/styles/variables.css`
-- **Component Styles**: Edit corresponding file in `src/styles/components/`
 
-### Adding Sections
-1. Add HTML structure in `index.html`
-2. Create component CSS file in `src/styles/components/`
-3. Import CSS in `src/styles/main.css`
-4. Create JS component if interactive behavior needed
-5. Initialize component in `src/js/main.js`
+- **Theme Colors**: Update `tailwind.config.js` colors
+- **Component Styles**: Edit Tailwind classes in component files
+- **Global Styles**: Modify `styles/globals.css`
+
+### Adding New Sections
+
+1. Create component in `components/`
+2. Add TypeScript types in `typings.d.ts` if needed
+3. Create data fetch utility in `utils/` if needed
+4. Add section to `pages/index.tsx`
+5. Style with Tailwind CSS
+
+## Deployment
+
+### GitHub Pages Configuration
+
+The site is configured for GitHub Pages deployment:
+
+- Static export enabled in `next.config.js`
+- Deploy script uses `gh-pages` package
+- Output directory: `out/`
+- `.nojekyll` file prevents Jekyll processing
+
+### Environment Setup
+
+- No environment variables required
+- All content is statically generated
+- Images served from `/public` directory
 
 ## Contact Form
-The contact form in `src/js/components/contact.js` currently shows an alert on submission. To implement actual form submission:
-- Replace the TODO comment with your preferred backend (email service, serverless function, etc.)
-- Consider services like Formspree, EmailJS, or Netlify Forms for static hosting
+
+The contact form uses `mailto:` links:
+- Form data is collected with React Hook Form
+- On submit, opens default email client with pre-filled content
+- Email address: `sunil.belde102@gmail.com`
 
 ## Browser Support
-- Modern browsers (Chrome, Firefox, Safari, Edge)
-- CSS Grid and Custom Properties support required
-- JavaScript ES6+ modules
+
+- Modern browsers with ES6+ support
+- CSS Grid and Flexbox
+- Tailwind CSS compatibility
+- Framer Motion animations
+
+## TypeScript
+
+- Strict type checking enabled
+- All components fully typed
+- Type definitions in `typings.d.ts`
+- No `any` types used
