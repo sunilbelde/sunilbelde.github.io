@@ -27,6 +27,15 @@ This portfolio showcases my projects, skills, and professional experience. Built
 - 🔍 SEO optimized
 - ♿️ Accessible components
 
+## Repository Structure
+
+This repository uses a two-branch structure:
+
+- **`master`** - Contains the built static site (deployed to GitHub Pages)
+- **`source`** - Contains the source code, development files, and configuration
+
+**To work on this project, always use the `source` branch!**
+
 ## Getting Started
 
 ### Prerequisites
