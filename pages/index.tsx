@@ -3,10 +3,12 @@ import Head from "next/head";
 import Header from "../components/Header";
 import Hero from "../components/Hero";
 import { Experience, PageInfo, Skill, Social } from "../typings";
-import { fetchPageInfo } from "../utils/fetchPageInfo";
-import { fetchExperiences } from "../utils/fetchExperience";
-import { fetchSkills } from "../utils/fetchSkills";
-import { fetchSocials } from "../utils/fetchSocials";
+import {
+  fetchPageInfo,
+  fetchExperiences,
+  fetchSkills,
+  fetchSocials,
+} from "../utils/fetchData";
 import About from "../components/About";
 import WorkExperience from "../components/WorkExperience";
 import Skills from "../components/Skills";

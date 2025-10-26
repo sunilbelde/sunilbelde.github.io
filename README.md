@@ -31,10 +31,7 @@ This portfolio showcases my projects, skills, and professional experience. Built
 
 This repository uses a simple structure:
 
-- **`master`** - Contains all source code and development files
-- **`gh-pages`** - Automatically generated deployment branch (created by `npm run deploy`)
-
-All development work happens directly in the `master` branch.
+- **`master`** - Contains all source code and development files. Deployments are triggered automatically via GitHub Actions when PRs are merged into master.
 
 ## Getting Started
 
@@ -91,17 +88,21 @@ sunilbelde.github.io/
 │   ├── About.tsx       # About section
 │   ├── Skills.tsx      # Skills showcase
 │   ├── WorkExperience.tsx  # Work experience timeline
-│   ├── Projects.tsx    # Project portfolio
-│   └── ContactMe.tsx   # Contact form
+│   ├── ExperienceCard.tsx  # Individual experience card
+│   ├── Projects.tsx    # Project portfolio (currently disabled)
+│   ├── ContactMe.tsx   # Contact form
+│   └── BackgroundCircles.tsx  # Animated background circles
 ├── pages/              # Next.js pages
 │   ├── _app.tsx        # App wrapper
-│   ├── index.tsx       # Home page
-│   └── api/            # API routes
+│   └── index.tsx       # Home page
+├── data/               # Portfolio content
+│   └── mockData.ts     # All portfolio data (experiences, skills, projects, etc.)
+├── utils/              # Utility functions
+│   ├── fetchData.ts    # Data fetching functions
+│   └── imageHelper.ts  # Image URL mapping utility
 ├── styles/             # Global styles
 │   └── globals.css     # Tailwind CSS imports
-├── utils/              # Utility functions
-├── data/               # Mock data
-├── public/             # Static assets
+├── public/             # Static assets (images, favicons)
 └── typings.d.ts        # TypeScript type definitions
 ```
 
@@ -109,37 +110,53 @@ sunilbelde.github.io/
 
 ### Update Content
 
-- **Personal Info:** Edit the data in `data/mockData.ts`
-- **Components:** Modify components in the `components/` directory
-- **Styling:** Update Tailwind configuration in `tailwind.config.js`
-- **Colors & Theme:** Customize in `styles/globals.css`
+All portfolio content is centralized in `data/mockData.ts`. Update:
+
+- **Personal Info:** Edit `mockPageInfo` (name, role, email, phone, address, bio)
+- **Work Experience:** Edit `mockExperiences` array
+- **Skills:** Edit `mockSkills` array (categories with multiple sub-skills)
+- **Technologies:** Edit `mockTechnologies` array
+- **Projects:** Edit `mockProjects` array
+- **Social Links:** Edit `mockSocials` array
+- **Images:** Add images to `public/` and map references in `utils/imageHelper.ts`
+
+### Styling
+
+- **Theme Colors:** Update Tailwind configuration in `tailwind.config.js`
+- **Component Styles:** Modify Tailwind classes in component files
+- **Global Styles:** Customize in `styles/globals.css`
 
 ### Add New Sections
 
 1. Create a new component in `components/`
-2. Import and add it to `pages/index.tsx`
-3. Style using Tailwind CSS classes
+2. Add TypeScript types in `typings.d.ts` if needed
+3. Add data to `data/mockData.ts`
+4. Create fetch function in `utils/fetchData.ts` if needed
+5. Import and add section to `pages/index.tsx`
+6. Update `getStaticProps` to fetch the new data
+7. Style using Tailwind CSS classes
 
 ## Deployment
 
 ### GitHub Pages
 
-This project is configured for deployment to GitHub Pages:
+The site is automatically deployed to GitHub Pages using GitHub Actions:
+
+1. Make your changes in a feature branch
+2. Create a pull request to `master`
+3. Once the PR is merged, GitHub Actions automatically builds and deploys the site
+
+The deployment workflow is triggered on every merge to the `master` branch.
+
+### Manual Deployment
+
+If you need to deploy manually, you can build the project locally:
 
 ```bash
 npm run build
-# Deploy the 'out' directory to gh-pages branch
 ```
 
-### Vercel
-
-The easiest way to deploy is using [Vercel](https://vercel.com):
-
-1. Push your code to GitHub
-2. Import the project in Vercel
-3. Vercel will automatically detect Next.js and deploy
-
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https://github.com/sunilbelde/sunilbelde.github.io)
+This creates an optimized static export in the `out/` directory.
 
 ## Contributing
 
