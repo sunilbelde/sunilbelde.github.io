@@ -55,19 +55,6 @@ const Home = ({ pageInfo, experiences, projects, skills, socials }: Props) => {
         <title>{"Sunil Belde - Portfolio"}</title>
       </Head>
 
-      {/* Google Analytics */}
-      <Script
-        src="https://www.googletagmanager.com/gtag/js?id=G-LV1LN9VBT0"
-        strategy="afterInteractive"
-      ></Script>
-      <Script id="google-analytics" strategy="afterInteractive">
-        {`window.dataLayer = window.dataLayer || [];
-           function gtag(){dataLayer.push(arguments);}
-           gtag('js', new Date());
-           gtag('config', 'G-LV1LN9VBT0')`}
-        ;
-      </Script>
-
       {/* Header */}
       <Header socials={socials} />
 
@@ -92,9 +79,9 @@ const Home = ({ pageInfo, experiences, projects, skills, socials }: Props) => {
       </section>
 
       {/* Projects */}
-      <section id="projects" className="snap-start">
+      {/* <section id="projects" className="snap-start">
         <Projects projects={projects} />
-      </section>
+      </section> */}
 
       {/* Contact */}
       <section id="contact" className="snap-start">
