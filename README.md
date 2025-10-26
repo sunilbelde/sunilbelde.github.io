@@ -29,12 +29,12 @@ This portfolio showcases my projects, skills, and professional experience. Built
 
 ## Repository Structure
 
-This repository uses a two-branch structure:
+This repository uses a simple structure:
 
-- **`master`** - Contains the built static site (deployed to GitHub Pages)
-- **`source`** - Contains the source code, development files, and configuration
+- **`master`** - Contains all source code and development files
+- **`gh-pages`** - Automatically generated deployment branch (created by `npm run deploy`)
 
-**To work on this project, always use the `source` branch!**
+All development work happens directly in the `master` branch.
 
 ## Getting Started
 
