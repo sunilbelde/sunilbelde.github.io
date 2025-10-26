@@ -19,13 +19,13 @@ export default function ContactMe({}: Props) {
 
   return (
     <div className="min-h-screen flex relative flex-col text-center md:text-left md:flex-row max-w-7xl px-10 justify-center mx-auto items-center py-10 pb-20">
-      <h3 className="absolute top-12 md:top-16 uppercase tracking-[10px] text-gray-500 text-lg md:text-xl">
+      <h3 className="absolute top-12 md:top-16 uppercase tracking-[10px] text-textSecondary text-lg md:text-xl">
       Contact
       </h3>
       <div className="flex flex-col space-y-1 md:space-y-2 lg:space-y-3 xl:space-y-3 2xl:space-y-4 w-full max-w-2xl mt-8 md:mt-12">
       <h4 className="text-lg md:text-xl lg:text-2xl 2xl:text-3xl font-semibold text-center">
-        I’d love to hear from you.{" "}
-        <span className="decoration-darkGreen/50 underline">Reach out anytime.</span>
+        I'd love to hear from you.{" "}
+        <span className="decoration-darkGreen-40 underline">Reach out anytime.</span>
       </h4>
 
 
@@ -67,7 +67,7 @@ export default function ContactMe({}: Props) {
       >
         <div className="flex flex-col md:flex-row md:space-x-1 space-y-3 md:space-y-0 w-full">
         <div className="flex flex-col w-full md:flex-1">
-          <label htmlFor="name" className="text-sm text-gray-400 mb-1 ml-1">
+          <label htmlFor="name" className="text-sm text-textSecondary mb-1 ml-1">
           Name
           </label>
           <input
@@ -78,7 +78,7 @@ export default function ContactMe({}: Props) {
           />
         </div>
         <div className="flex flex-col w-full md:flex-1">
-          <label htmlFor="email" className="text-sm text-gray-400 mb-1 ml-1">
+          <label htmlFor="email" className="text-sm text-textSecondary mb-1 ml-1">
           Email
           </label>
           <input
@@ -90,7 +90,7 @@ export default function ContactMe({}: Props) {
         </div>
         </div>
         <div className="flex flex-col">
-        <label htmlFor="subject" className="text-sm text-gray-400 mb-1 ml-1">
+        <label htmlFor="subject" className="text-sm text-textSecondary mb-1 ml-1">
           Subject
         </label>
         <input
@@ -101,7 +101,7 @@ export default function ContactMe({}: Props) {
         />
         </div>
         <div className="flex flex-col">
-        <label htmlFor="message" className="text-sm text-gray-400 mb-1 ml-1">
+        <label htmlFor="message" className="text-sm text-textSecondary mb-1 ml-1">
           Message
         </label>
         <textarea
