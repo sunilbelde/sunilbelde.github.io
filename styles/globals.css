@@ -11,3 +11,6 @@
     @apply outline-none bg-slate-400/20 rounded-lg border-b-2 px-6 py-3 md:py-4  text-gray-500 placeholder-gray-500 transition-all focus:border-darkGreen/20 focus:text-darkGreen/80 hover:border-darkGreen/20;
   }
 }
+.backface-hidden {
+  backface-visibility: hidden;
+}
