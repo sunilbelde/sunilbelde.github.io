@@ -59,10 +59,11 @@ export default function About({ pageInfo }: Props) {
         .map((para, idx) => (
           <p
             key={idx}
-            className="text-sm md:text-lg text-textSecondary leading-relaxed text-justify mb-5"
+            className="text-sm md:text-[1.05rem] text-textSecondary leading-snug tracking-[0.015em] md:tracking-[0.02em] mb-3 text-left"
           >
             {para.trim()}
           </p>
+
         ))}
       </motion.div>
     </motion.div>

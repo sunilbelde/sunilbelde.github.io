@@ -8,10 +8,13 @@ export const mockPageInfo: PageInfo = {
   _type: "pageInfo",
   address: "Chicago, IL",
   backgroundInformation: `
-  I’m an ML Engineer 🤖 specializing in Generative AI and LLM-driven automation, with experience designing and deploying production-grade data pipelines and intelligent systems. My work bridges machine learning 🧠, data engineering ⚙️, and cloud infrastructure ☁️ — enabling scalable, efficient, and explainable AI solutions.
+I’m an ML Engineer 🤖 driven by curiosity for how intelligence can be systematized — from algorithms to automation. My work sits at the intersection of Generative AI 🧠, large language models, and data engineering ⚙️, where I design frameworks that help machines understand human intent and translate it into action.
 
-  I’ve contributed to projects ranging from document intelligence 📄 and NLP research 💬 to building Generative AI platforms that empower business users to create and manage ETL pipelines through natural language. I’m passionate about transforming how humans interact with data 🌍 — making complex technical workflows accessible, adaptive, and intelligent ✨.
-    `,
+I love building AI systems that don’t just process data but reason with it — combining retrieval, prompting, and evaluation to make workflows adaptive and self-improving. My interests span code generation, multi-agent orchestration, and the broader challenge of making machine learning infrastructure more explainable and efficient ☁️.
+
+To me, building AI isn’t just about automation; it’s about alignment, accessibility, and the art of simplifying complexity ✨.
+`,
+
   email: "sunil.belde102@gmail.com",
   role: "ML Engineer - GenAI/LLM Automation",
   heroImage: {
@@ -115,75 +118,58 @@ export const mockTechnologies: Technology[] = [
   }
 ];
 
-
 export const mockSkills: Skill[] = [
   {
     title: "Artificial Intelligence",
     experience: "≈ 4 Years XP",
     icon: "brain",
     skills: [
-      { name: "Large Language Models (Llama, Mistral)", level: 90 },
-      { name: "Prompt Engineering & RAG", level: 88 },
-      { name: "Generative AI Applications", level: 87 },
-      { name: "Few-Shot / Chain-of-Thought Prompting", level: 85 },
+      "LLMs",
+      "RAG",
+      "LangChain",
+      "Agentic Workflows",
+      "Prompt-Engineering",
     ],
   },
   {
-    title: "Machine Learning & NLP",
+    title: "Data Science",
     experience: "≈ 4 Years XP",
     icon: "network",
     skills: [
-      { name: "Text Classification / Sentiment Analysis", level: 88 },
-      { name: "Topic Modeling / Named Entity Recognition", level: 86 },
-      { name: "Model Evaluation & Optimization", level: 85 },
-      { name: "PyTorch / TensorFlow", level: 86 },
+      "NLP",
+      "CV",
+      "Data Modeling",
+      "PyTorch",
+      "TensorFlow",
     ],
   },
   {
     title: "Data Engineering & Pipelines",
     experience: "≈ 3.5 Years XP",
     icon: "database",
-    skills: [
-      { name: "PySpark / ETL Development", level: 88 },
-      { name: "SQL / PostgreSQL / MongoDB", level: 90 },
-      { name: "Workflow Orchestration (NetworkX, DAGs)", level: 85 },
-      { name: "Data Transformation & Integration", level: 84 },
-    ],
+    skills: ["PySpark", "SQL", "ETL", "DAGs", "Data Integration"],
   },
   {
     title: "Software Development",
     experience: "≈ 4 Years XP",
     icon: "code",
-    skills: [
-      { name: "Python / Java / Scala", level: 90 },
-      { name: "Spring Boot / REST API Design", level: 84 },
-      { name: "System Design & Architecture", level: 82 },
-      { name: "Testing / CI-CD / Version Control", level: 85 },
-    ],
+    skills: ["Python", "Java", "Scala", "Spring Boot", "System Design"],
   },
   {
     title: "Cloud & DevOps",
     experience: "≈ 3 Years XP",
     icon: "cloud",
-    skills: [
-      { name: "AWS (EC2, S3, Glue, SageMaker)", level: 86 },
-      { name: "Docker / Kubernetes", level: 84 },
-      { name: "Infrastructure Automation (Helm, YAML)", level: 80 },
-      { name: "Monitoring & Logging (ELK Stack)", level: 80 },
-    ],
+    skills: ["AWS", "Docker", "Kubernetes", "CI/CD", "ELK Stack"],
   },
   {
     title: "Data Visualization & Tools",
     experience: "≈ 3 Years XP",
     icon: "barchart3",
-    skills: [
-      { name: "Tableau / Kibana / Power BI", level: 80 },
-      { name: "Data Analytics & Reporting", level: 85 },
-      { name: "Versioning & Experiment Tracking (MLflow, DVC)", level: 78 },
-      { name: "Documentation & Collaboration (Jupyter, Prodigy)", level: 82 },
-    ],
+    skills: ["Tableau", "Power BI", "Kibana", "MLflow", "Three.js"],
   },
 ];
+
+
 
 
 

@@ -43,7 +43,7 @@ export interface Skill {
     title: string;
     experience: string;
     icon: string;
-    skills: SkillItem[];
+    skills: string[];
 }
 
 export interface Experience extends SanityBody {
