@@ -153,7 +153,7 @@ export const mockSkills: Skill[] = [
     title: "Software Development",
     experience: "≈ 4 Years XP",
     icon: "code",
-    skills: ["Python", "Java", "Scala", "Spring Boot", "System Design"],
+    skills: ["Python", "Java", "Angular", "Spring Boot", "System Design"],
   },
   {
     title: "Cloud & DevOps",
