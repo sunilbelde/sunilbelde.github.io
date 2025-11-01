@@ -121,7 +121,7 @@ export const mockTechnologies: Technology[] = [
 export const mockSkills: Skill[] = [
   {
     title: "Artificial Intelligence",
-    experience: "≈ 4 Years XP",
+    experience: "≈ 2 Years XP",
     icon: "brain",
     skills: [
       "LLMs",
@@ -133,7 +133,7 @@ export const mockSkills: Skill[] = [
   },
   {
     title: "Data Science",
-    experience: "≈ 4 Years XP",
+    experience: "≈ 5+ Years XP",
     icon: "network",
     skills: [
       "NLP",
@@ -145,13 +145,13 @@ export const mockSkills: Skill[] = [
   },
   {
     title: "Data Engineering & Pipelines",
-    experience: "≈ 3.5 Years XP",
+    experience: "≈ 2 Years XP",
     icon: "database",
     skills: ["PySpark", "SQL", "ETL", "DAGs", "Data Integration"],
   },
   {
     title: "Software Development",
-    experience: "≈ 4 Years XP",
+    experience: "≈ 6 Years XP",
     icon: "code",
     skills: ["Python", "Java", "Angular", "Spring Boot", "System Design"],
   },
