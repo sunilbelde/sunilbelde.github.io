@@ -1,69 +1,44 @@
 /** @type {import('tailwindcss').Config} */
+const token = (name) => `rgb(var(--${name}) / <alpha-value>)`;
+
 module.exports = {
   content: [
-    "./app/**/*.{js,ts,jsx,tsx}",
     "./pages/**/*.{js,ts,jsx,tsx}",
     "./components/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {
     extend: {
       colors: {
-        // Theme-aware colors using CSS variables with opacity support
-        lightGreen: {
-          DEFAULT: 'rgb(var(--color-light-green))',
-          10: 'rgba(var(--color-light-green), 0.1)',
-          20: 'rgba(var(--color-light-green), 0.2)',
-          40: 'rgba(var(--color-light-green), 0.4)',
-          60: 'rgba(var(--color-light-green), 0.6)',
-          80: 'rgba(var(--color-light-green), 0.8)',
+        bg: token("bg"),
+        surface: token("surface"),
+        raised: token("raised"),
+        line: token("line"),
+        ink: token("ink"),
+        muted: token("muted"),
+        faint: token("faint"),
+        accent: token("accent"),
+        "accent-ink": token("accent-ink"),
+      },
+      fontFamily: {
+        sans: ["var(--font-sans)", "ui-sans-serif", "system-ui", "sans-serif"],
+        mono: ["var(--font-mono)", "ui-monospace", "SFMono-Regular", "monospace"],
+      },
+      maxWidth: {
+        page: "72rem",
+      },
+      keyframes: {
+        rise: {
+          from: { opacity: "0", transform: "translateY(14px)" },
+          to: { opacity: "1", transform: "none" },
         },
-        darkGreen: {
-          DEFAULT: 'rgb(var(--color-dark-green))',
-          10: 'rgba(var(--color-dark-green), 0.1)',
-          20: 'rgba(var(--color-dark-green), 0.2)',
-          30: 'rgba(var(--color-dark-green), 0.3)',
-          40: 'rgba(var(--color-dark-green), 0.4)',
-          60: 'rgba(var(--color-dark-green), 0.6)',
-          80: 'rgba(var(--color-dark-green), 0.8)',
-        },
-        accent: 'rgb(var(--color-accent))',
-
-        // Background colors
-        lightBackground: 'var(--bg-secondary)',
-        darkBackground: 'var(--bg-light)',
-
-        // Utility colors
-        darkBlack: 'rgb(var(--color-black))',
-        grayColor: 'rgb(var(--color-gray))',
-        yellowColor: 'rgb(var(--color-yellow))',
-
-        // Semantic colors for easier theming
-        primary: 'var(--bg-primary)',
-        secondary: 'var(--bg-secondary)',
-        textPrimary: 'var(--text-primary)',
-        textSecondary: 'var(--text-secondary)',
-        textMuted: 'var(--text-muted)',
-        border: 'var(--border-color)',
-        borderLight: 'var(--border-light)',
       },
-      backgroundColor: {
-        primary: 'var(--bg-primary)',
-        secondary: 'var(--bg-secondary)',
-        light: 'var(--bg-light)',
+      animation: {
+        rise: "rise 0.6s cubic-bezier(0.21, 0.47, 0.32, 0.98) both",
       },
-      textColor: {
-        primary: 'var(--text-primary)',
-        secondary: 'var(--text-secondary)',
-        muted: 'var(--text-muted)',
-      },
-      borderColor: {
-        primary: 'var(--border-color)',
-        light: 'var(--border-light)',
-      },
-      backgroundImage: {
-        'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
+      letterSpacing: {
+        tightest: "-0.04em",
       },
     },
   },
-  plugins: [require("tailwind-scrollbar")],
+  plugins: [],
 };

@@ -1,76 +1,100 @@
-
-
-interface SanityBody {
-    _createdAt: string;
-    _id: string;
-    _rev: string;
-    _updatedAt: string;
+export interface Profile {
+  name: string;
+  role: string;
+  company: string;
+  location: string;
+  headline: string;
+  summary: string[];
+  email: string;
+  phone: string;
+  phoneHref: string;
+  portrait: string;
 }
 
-interface Image {
-    _type: 'image';
-    asset: {
-        _ref: string;
-        _type: 'reference';
-    };
+export interface Metric {
+  value: string;
+  label: string;
 }
 
-export interface PageInfo extends SanityBody {
-    _type: 'pageInfo';
-    address: string;
-    backgroundInformation: string;
-    email: string;
-    role: string;
-    heroImage: Image;
-    name: string;
-    phoneNumber: string;
-    profilePic: Image;
+export interface CaseStudy {
+  id: string;
+  title: string;
+  kicker: string;
+  summary: string;
+  metric: Metric;
+  points: string[];
+  stack: string[];
 }
 
-export interface Technology extends SanityBody {
-    _type: 'technology';
-    image: Image;
-    progress: number;
-    title: string;
+export interface Experience {
+  company: string;
+  companyNote?: string;
+  logo?: string;
+  role: string;
+  location: string;
+  start: string;
+  end: string;
+  summary: string;
+  points: string[];
+  tags: string[];
 }
 
-export interface SkillItem {
-    name: string;
-    level: number;
+export interface SkillGroup {
+  title: string;
+  description: string;
+  items: string[];
 }
 
-export interface Skill {
-    title: string;
-    experience: string;
-    icon: string;
-    skills: string[];
+export interface SideProject {
+  title: string;
+  context: string;
+  summary: string;
+  tags: string[];
 }
 
-export interface Experience extends SanityBody {
-    _type: 'experience';
-    company: string;
-    description: string;
-    companyImage: Image;
-    dateStarted: date;
-    dateEnded: date;
-    isCurrentlyWorkingHere: boolean;
-    jobTitle: string;
-    points: string[];
-    technologies: Technology[];
-    tags: string[];
+export interface Education {
+  school: string;
+  degree: string;
+  location: string;
+  period: string;
 }
 
-export interface Project extends SanityBody {
-    _type: 'project';
-    title: string;
-    linkToBuild: string;
-    image: Image;
-    summary: string;
-    technologies: Technology[];
+export interface Certification {
+  title: string;
+  issuer: string;
 }
 
-export interface Social extends SanityBody {
-    _type: 'social';
-    title: string;
-    url: string;
+export type SocialKind = "github" | "linkedin" | "medium";
+
+export interface Social {
+  kind: SocialKind;
+  label: string;
+  handle: string;
+  url: string;
+}
+
+
+export interface ArchNode {
+  title: string;
+  detail: string;
+  tags?: string[];
+}
+
+export interface ArchZone {
+  label: string;
+  note: string;
+  nodes: ArchNode[];
+}
+
+export interface Principle {
+  title: string;
+  detail: string;
+}
+
+export interface PersonalStack {
+  intro: string;
+  zones: ArchZone[];
+  principles: Principle[];
+  metrics: Metric[];
+  stack: string[];
 }
