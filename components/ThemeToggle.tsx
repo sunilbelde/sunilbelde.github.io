@@ -1,35 +1,36 @@
-import React from 'react';
-import { motion } from 'framer-motion';
-import { SunIcon, MoonIcon } from '@heroicons/react/24/solid';
-import { useTheme } from '../utils/ThemeContext';
+import { Moon, Sun } from "lucide-react";
+import { useEffect, useState } from "react";
 
-const ThemeToggle = () => {
-  const { theme, toggleTheme } = useTheme();
+type Theme = "light" | "dark";
+
+const readTheme = (): Theme =>
+  document.documentElement.getAttribute("data-theme") === "dark" ? "dark" : "light";
+
+/** The initial theme is set before paint by the inline script in _document.tsx. */
+export default function ThemeToggle() {
+  const [theme, setTheme] = useState<Theme | null>(null);
+
+  useEffect(() => setTheme(readTheme()), []);
+
+  const toggle = () => {
+    const next: Theme = readTheme() === "dark" ? "light" : "dark";
+    document.documentElement.setAttribute("data-theme", next);
+    try {
+      localStorage.setItem("theme", next);
+    } catch {
+      /* storage unavailable; theme still applies for this visit */
+    }
+    setTheme(next);
+  };
 
   return (
-    <motion.button
-      onClick={toggleTheme}
-      className="fixed bottom-8 right-8 z-50 p-3 rounded-full bg-secondary border-2 border-borderLight shadow-lg hover:shadow-xl transition-all hover:border-darkGreen-40"
-      whileHover={{ scale: 1.1 }}
-      whileTap={{ scale: 0.9 }}
-      initial={{ opacity: 0, y: 20 }}
-      animate={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.3 }}
-      aria-label={`Switch to ${theme === 'light' ? 'dark' : 'light'} mode`}
+    <button
+      type="button"
+      onClick={toggle}
+      aria-label={theme === "dark" ? "Switch to light theme" : "Switch to dark theme"}
+      className="grid h-9 w-9 place-items-center rounded-full border border-line text-muted transition-colors hover:border-ink/40 hover:text-ink"
     >
-      <motion.div
-        initial={false}
-        animate={{ rotate: theme === 'light' ? 0 : 180 }}
-        transition={{ duration: 0.3 }}
-      >
-        {theme === 'light' ? (
-          <MoonIcon className="h-6 w-6 text-textPrimary" />
-        ) : (
-          <SunIcon className="h-6 w-6 text-yellowColor" />
-        )}
-      </motion.div>
-    </motion.button>
+      {theme === "dark" ? <Sun className="h-4 w-4" /> : <Moon className="h-4 w-4" />}
+    </button>
   );
-};
-
-export default ThemeToggle;
+}

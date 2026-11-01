@@ -1,13 +1,14 @@
-import '../styles/globals.css'
-import type { AppProps } from 'next/app'
-import { ThemeProvider } from '../utils/ThemeContext'
-import ThemeToggle from '../components/ThemeToggle'
+import "../styles/globals.css";
+import type { AppProps } from "next/app";
+import { Inter, JetBrains_Mono } from "next/font/google";
+
+const sans = Inter({ subsets: ["latin"], variable: "--font-sans", display: "swap" });
+const mono = JetBrains_Mono({ subsets: ["latin"], variable: "--font-mono", display: "swap" });
 
 export default function App({ Component, pageProps }: AppProps) {
   return (
-    <ThemeProvider>
+    <div className={`${sans.variable} ${mono.variable} font-sans`}>
       <Component {...pageProps} />
-      <ThemeToggle />
-    </ThemeProvider>
-  )
+    </div>
+  );
 }
