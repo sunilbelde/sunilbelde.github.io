@@ -1,4 +1,5 @@
 import type {
+  Article,
   CaseStudy,
   Certification,
   Education,
@@ -412,17 +413,52 @@ export const sideProjects: SideProject[] = [
   },
   {
     title: "Neural machine translation",
-    context: "ML project",
+    context: "Open source",
     summary:
-      "English-to-Hindi and English-to-Telugu translation with Seq2Seq attention models and subword tokenization, evaluated with BLEU.",
-    tags: ["Seq2Seq", "LSTM/GRU", "BLEU"],
+      "English-to-Hindi and English-to-Telugu translation with a Bahdanau-attention seq2seq model in TensorFlow. I built the Telugu corpus myself using the Google Translate API.",
+    tags: ["Seq2Seq", "Attention", "TensorFlow"],
+    code: "https://github.com/sunilbelde/neural-machine-translation-english-to-hindi-telugu",
   },
   {
-    title: "Image denoising",
-    context: "ML project",
+    title: "Image denoising with DnCNN & RIDNet",
+    context: "Open source · Article",
     summary:
-      "Restoring noisy images with DnCNN and autoencoder architectures, measured with PSNR and SSIM.",
-    tags: ["Computer vision", "DnCNN", "Autoencoders"],
+      "Implemented DnCNN and RIDNet from their papers, trained on 85K patches from BSDS500, and compared quantized versions. DnCNN lifted a noisy image from 20.5 to 31.2 dB PSNR.",
+    tags: ["Computer vision", "Keras", "Quantization"],
+    code: "https://github.com/sunilbelde/Imagedenoising-dncnn-ridnet-keras",
+    article: "https://medium.com/analytics-vidhya/noise-removal-in-images-using-deep-learning-models-3972544372d2",
+  },
+  {
+    title: "Multi-label classification of harassment reports",
+    context: "Open source · Article",
+    summary:
+      "Classifies personal stories from the SafeCity platform into multiple harassment categories at once, to help surface crime patterns, with a demo web app on top.",
+    tags: ["NLP", "Multi-label", "Deployment"],
+    code: "https://github.com/sunilbelde/safecity-multilabel-classification",
+    article: "https://medium.com/analytics-vidhya/multilabel-classification-of-sexual-harassment-personal-stories-metoo-19443ee0c763",
+  },
+  {
+    title: "Apparel search engine",
+    context: "Open source",
+    summary:
+      "Low-latency product search using Elasticsearch and Universal Sentence Encoder embeddings, run as Docker containers on AWS with images served from S3.",
+    tags: ["Search", "Elasticsearch", "Docker", "AWS"],
+    code: "https://github.com/sunilbelde/apparel-search-engine-Elasticsearch",
+  },
+];
+
+export const articles: Article[] = [
+  {
+    title: "Noise removal in images using deep learning models",
+    publication: "Analytics Vidhya",
+    date: "Apr 2021",
+    url: "https://medium.com/analytics-vidhya/noise-removal-in-images-using-deep-learning-models-3972544372d2",
+  },
+  {
+    title: "Multi-label classification of sexual harassment personal stories",
+    publication: "Analytics Vidhya",
+    date: "Mar 2021",
+    url: "https://medium.com/analytics-vidhya/multilabel-classification-of-sexual-harassment-personal-stories-metoo-19443ee0c763",
   },
 ];
 
@@ -463,6 +499,6 @@ export const navLinks = [
   { href: "#builds", label: "Builds" },
   { href: "#experience", label: "Experience" },
   { href: "#skills", label: "Skills" },
-  { href: "#background", label: "Background" },
+  { href: "#background", label: "Projects" },
   { href: "#contact", label: "Contact" },
 ];

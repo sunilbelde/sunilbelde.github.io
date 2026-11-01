@@ -50,6 +50,15 @@ export interface SideProject {
   context: string;
   summary: string;
   tags: string[];
+  code?: string;
+  article?: string;
+}
+
+export interface Article {
+  title: string;
+  publication: string;
+  date: string;
+  url: string;
 }
 
 export interface Education {
