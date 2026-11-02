@@ -3,25 +3,11 @@
 @tailwind utilities;
 
 /*
- * "Field notes" palette: warm paper, carbon ink, one vermilion accent.
+ * "Field notes" palette: carbon ink, warm paper, one vermilion accent.
+ * Dark is the default theme; light applies only when chosen (data-theme="light").
  * Tokens are RGB channels so Tailwind can apply opacity (e.g. bg-accent/10).
  */
 :root,
-:root[data-theme="light"] {
-  --bg: 246 243 236;
-  --surface: 253 252 249;
-  --raised: 236 231 221;
-  --line: 208 200 186;
-  --ink: 17 16 14;
-  --muted: 72 68 62;
-  --faint: 110 104 96;
-  --accent: 198 60 10;
-  --accent-ink: 255 250 245;
-  --grain-opacity: 0.035;
-  --guide-opacity: 0.32;
-  color-scheme: light;
-}
-
 :root[data-theme="dark"] {
   --bg: 15 14 13;
   --surface: 22 21 19;
@@ -37,20 +23,19 @@
   color-scheme: dark;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root:not([data-theme="light"]) {
-    --bg: 15 14 13;
-    --surface: 22 21 19;
-    --raised: 31 29 26;
-    --line: 47 44 40;
-    --ink: 236 231 222;
-    --muted: 168 162 152;
-    --faint: 130 124 116;
-    --accent: 255 113 66;
-    --accent-ink: 24 9 4;
-    --grain-opacity: 0.09;
-    color-scheme: dark;
-  }
+:root[data-theme="light"] {
+  --bg: 246 243 236;
+  --surface: 253 252 249;
+  --raised: 236 231 221;
+  --line: 208 200 186;
+  --ink: 17 16 14;
+  --muted: 72 68 62;
+  --faint: 110 104 96;
+  --accent: 198 60 10;
+  --accent-ink: 255 250 245;
+  --grain-opacity: 0.035;
+  --guide-opacity: 0.32;
+  color-scheme: light;
 }
 
 /* Always-dark panel, e.g. the hero agent terminal: dark tokens in both themes. */
@@ -69,18 +54,8 @@
 
 /* Inverted bands (bg-ink) borrow the opposite theme's accent so it keeps contrast. */
 .band {
-  --accent: 255 113 66;
-  --accent-ink: 24 9 4;
-}
-:root[data-theme="dark"] .band {
   --accent: 198 60 10;
   --accent-ink: 255 248 242;
-}
-@media (prefers-color-scheme: dark) {
-  :root:not([data-theme="light"]) .band {
-    --accent: 198 60 10;
-    --accent-ink: 255 248 242;
-  }
 }
 :root[data-theme="light"] .band {
   --accent: 255 113 66;
@@ -109,16 +84,12 @@
     pointer-events: none;
     opacity: var(--grain-opacity);
     background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 0.5 0 0 0 0 0.5 0 0 0 0 0.5 0 0 0 1 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
-    mix-blend-mode: multiply;
+    mix-blend-mode: screen;
   }
 
   [data-theme="light"] body::after {
     mix-blend-mode: soft-light;
     opacity: calc(var(--grain-opacity) * 3);
-  }
-
-  [data-theme="dark"] body::after {
-    mix-blend-mode: screen;
   }
 
   ::selection {

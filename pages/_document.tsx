@@ -1,8 +1,8 @@
 import { Head, Html, Main, NextScript } from "next/document";
 
 // Runs before first paint: marks JS as available (enables scroll reveals) and applies the
-// saved or system theme so dark mode never flashes light.
-const themeScript = `(function(){document.documentElement.classList.add('js');try{var t=localStorage.getItem('theme');if(t!=='light'&&t!=='dark'){t=window.matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light'}document.documentElement.setAttribute('data-theme',t)}catch(e){document.documentElement.setAttribute('data-theme','dark')}})();`;
+// saved theme (dark unless the visitor chose light) so the page never flashes the wrong theme.
+const themeScript = `(function(){document.documentElement.classList.add('js');try{var t=localStorage.getItem('theme');if(t!=='light'){t='dark'}document.documentElement.setAttribute('data-theme',t)}catch(e){document.documentElement.setAttribute('data-theme','dark')}})();`;
 
 export default function Document() {
   return (

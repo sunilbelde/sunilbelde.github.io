@@ -46,8 +46,7 @@ export default function Home() {
         <meta property="og:url" content={`${SITE_URL}/`} />
         <meta property="og:image" content={`${SITE_URL}${profile.portrait}`} />
         <meta name="twitter:card" content="summary" />
-        <meta name="theme-color" content="#0f0e0d" media="(prefers-color-scheme: dark)" />
-        <meta name="theme-color" content="#f3f0e8" media="(prefers-color-scheme: light)" />
+        <meta name="theme-color" content="#0f0e0d" />
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(personJsonLd) }} />
       </Head>
 
