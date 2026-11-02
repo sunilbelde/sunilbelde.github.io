@@ -317,7 +317,8 @@ export default function AgentTrace() {
   const done = phase === PHASES.length - 1 && shown >= ph.lines.length;
 
   return (
-    <figure className="crop-marks border border-ink/15 bg-surface/80 backdrop-blur-sm">
+    <div className="crop-marks">
+    <figure className="ink-panel border border-ink/15 bg-surface shadow-[0_24px_60px_-28px_rgba(20,16,10,0.55)]">
       <div className="flex items-center justify-between gap-3 border-b border-ink/10 px-4 py-2">
         <p className="flex items-center gap-2 font-mono text-[0.68rem] uppercase tracking-[0.14em] text-faint">
           <span className={`h-1.5 w-1.5 rounded-full ${done ? "bg-accent" : "animate-pulse bg-ink/50"}`} aria-hidden="true" />
@@ -356,5 +357,6 @@ export default function AgentTrace() {
         fig. 02 — an analyst and an agent agree the mapping; that becomes the intent the ETL agent builds from
       </figcaption>
     </figure>
+    </div>
   );
 }

@@ -8,16 +8,17 @@
  */
 :root,
 :root[data-theme="light"] {
-  --bg: 243 240 232;
-  --surface: 249 247 242;
-  --raised: 233 229 219;
-  --line: 212 206 194;
-  --ink: 21 20 18;
-  --muted: 84 80 74;
-  --faint: 114 108 100;
-  --accent: 194 62 20;
-  --accent-ink: 255 248 242;
-  --grain-opacity: 0.07;
+  --bg: 246 243 236;
+  --surface: 253 252 249;
+  --raised: 236 231 221;
+  --line: 208 200 186;
+  --ink: 17 16 14;
+  --muted: 72 68 62;
+  --faint: 110 104 96;
+  --accent: 198 60 10;
+  --accent-ink: 255 250 245;
+  --grain-opacity: 0.035;
+  --guide-opacity: 0.32;
   color-scheme: light;
 }
 
@@ -32,6 +33,7 @@
   --accent: 255 113 66;
   --accent-ink: 24 9 4;
   --grain-opacity: 0.09;
+  --guide-opacity: 0.55;
   color-scheme: dark;
 }
 
@@ -51,18 +53,32 @@
   }
 }
 
+/* Always-dark panel, e.g. the hero agent terminal: dark tokens in both themes. */
+.ink-panel {
+  --bg: 15 14 13;
+  --surface: 22 21 19;
+  --raised: 31 29 26;
+  --line: 47 44 40;
+  --ink: 236 231 222;
+  --muted: 168 162 152;
+  --faint: 130 124 116;
+  --accent: 255 113 66;
+  --accent-ink: 24 9 4;
+  color: rgb(var(--ink));
+}
+
 /* Inverted bands (bg-ink) borrow the opposite theme's accent so it keeps contrast. */
 .band {
   --accent: 255 113 66;
   --accent-ink: 24 9 4;
 }
 :root[data-theme="dark"] .band {
-  --accent: 194 62 20;
+  --accent: 198 60 10;
   --accent-ink: 255 248 242;
 }
 @media (prefers-color-scheme: dark) {
   :root:not([data-theme="light"]) .band {
-    --accent: 194 62 20;
+    --accent: 198 60 10;
     --accent-ink: 255 248 242;
   }
 }
@@ -94,6 +110,11 @@
     opacity: var(--grain-opacity);
     background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 0.5 0 0 0 0 0.5 0 0 0 0 0.5 0 0 0 1 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
     mix-blend-mode: multiply;
+  }
+
+  [data-theme="light"] body::after {
+    mix-blend-mode: soft-light;
+    opacity: calc(var(--grain-opacity) * 3);
   }
 
   [data-theme="dark"] body::after {
@@ -166,7 +187,7 @@
   .column-guides {
     background-image: repeating-linear-gradient(
       to right,
-      rgb(var(--line) / 0.55) 0 1px,
+      rgb(var(--line) / var(--guide-opacity, 0.55)) 0 1px,
       transparent 1px calc(100% / 12)
     );
     mask-image: linear-gradient(to bottom, black 0%, black 55%, transparent 100%);
