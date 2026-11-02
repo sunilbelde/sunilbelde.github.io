@@ -16,6 +16,13 @@ export interface Metric {
   label: string;
 }
 
+export interface PointGroup {
+  label: string;
+  points: string[];
+  /** Work in progress; rendered with a live marker. */
+  live?: boolean;
+}
+
 export interface CaseStudy {
   id: string;
   title: string;
@@ -23,6 +30,10 @@ export interface CaseStudy {
   summary: string;
   metric: Metric;
   points: string[];
+  /** Optional labelled sections for a fuller write-up, rendered after `points`. */
+  groups?: PointGroup[];
+  /** One line on how this system connects to another case study. */
+  related?: string;
   stack: string[];
 }
 

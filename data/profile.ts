@@ -52,27 +52,41 @@ export const caseStudies: CaseStudy[] = [
       "Translates English business rules and metadata into production-ready PySpark and Scala, deployable as AWS Glue jobs, so teams can build ETL workflows without hand-writing code.",
     metric: { value: "5 mo → 4 wk", label: "delivery time, with 70%+ less engineering effort" },
     points: [
-      "Two-phase design: Llama 3.3-70B translates pseudocode into code, then a deterministic orchestration engine assembles and executes the pipeline.",
-      "Modeled ETL as a Python/NetworkX DAG across Source, Joiner, Filter, Transform, Target, Custom and Distinct components for fault-tolerant, lineage-aware runs.",
-      "Agentic RAG with LangChain and SimSearch retrieval, few-shot and Chain-of-Thought prompting, plus automated validation and feedback-driven retry loops.",
-      "Led benchmarking of Mixtral, Llama, GPT-OSS 120B and other open models on latency, accuracy, reasoning quality, hallucination rate and cost to choose the production model.",
-      "Set throughput, latency and reliability SLAs through load testing with Apache JMeter.",
+      "Two-phase design: an LLM translates pseudocode into code, then a deterministic orchestration engine assembles and executes the pipeline.",
+      "Models each ETL job as a dependency graph so runs are fault-tolerant and lineage-aware.",
+      "Agentic RAG with few-shot and Chain-of-Thought prompting, plus automated validation and feedback-driven retry loops.",
+      "Led benchmarking of open models on latency, accuracy, reasoning quality, hallucination rate and cost to choose the production model.",
+      "Load-tested the platform to set throughput, latency and reliability targets.",
     ],
-    stack: ["Llama 3.3-70B", "LangChain", "RAG", "NetworkX", "PySpark", "Scala", "AWS Glue", "JMeter"],
+    stack: ["LLMs", "LangChain", "RAG", "PySpark", "Scala", "AWS Glue", "Load testing"],
   },
   {
     id: "mapping",
     kicker: "Capital One · Agentic AI",
-    title: "Conversion Mapping Engine",
+    title: "Conversion Mapping Intelligence Engine",
     summary:
-      "A human-in-the-loop assistant that uses ReAct workflows to propose, critique and refine source-to-target mappings for a large data migration, grounded in requirements and historical conversion knowledge.",
+      "A human-in-the-loop agent for a large enterprise data migration. It proposes source-to-target data mappings, critiques and refines them, and hands them to a person for approval.",
     metric: { value: "75%", label: "source-field recall on cross-domain benchmarks" },
-    points: [
-      "Integrated enterprise MCP tools (Exchange, Glean and Ask-Data) so the agent can discover registered data assets, search enterprise knowledge and query data context.",
-      "Evaluated mapping accuracy across structural correctness, source-field selection and transformation conditions.",
-      "Ran benchmark evaluations across models, reasoning settings and prompt versions, then fed results back into prompts and configuration.",
+    points: [],
+    groups: [
+      {
+        label: "How it works",
+        points: [
+          "Follows the ReAct pattern: the agent reasons, calls tools, reads the results and revises its mapping.",
+          "Grounds its answers in requirements and knowledge from past conversions.",
+          "Uses enterprise data-catalog, knowledge-search and data-query tools through MCP.",
+        ],
+      },
+      {
+        label: "How it's evaluated",
+        points: [
+          "Benchmarked across domains, comparing models, reasoning settings and prompt versions.",
+          "Tuned prompts from the results and built feedback loops that feed evaluation back into the agent.",
+        ],
+      },
     ],
-    stack: ["ReAct", "MCP", "Human-in-the-loop", "Benchmarking", "Python"],
+    related: "Pairs with the GenAI ETL platform (01): approved mappings are the kind of input it turns into code.",
+    stack: ["ReAct", "MCP", "Human-in-the-loop", "Benchmarking", "Prompt tuning"],
   },
   {
     id: "edq",

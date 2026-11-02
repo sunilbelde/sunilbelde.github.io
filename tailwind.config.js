@@ -22,6 +22,7 @@ module.exports = {
       fontFamily: {
         sans: ["var(--font-sans)", "ui-sans-serif", "system-ui", "sans-serif"],
         mono: ["var(--font-mono)", "ui-monospace", "SFMono-Regular", "monospace"],
+        serif: ["var(--font-serif)", "ui-serif", "Georgia", "serif"],
       },
       maxWidth: {
         page: "72rem",
@@ -33,7 +34,7 @@ module.exports = {
         },
       },
       animation: {
-        rise: "rise 0.6s cubic-bezier(0.21, 0.47, 0.32, 0.98) both",
+        rise: "rise 0.8s cubic-bezier(0.21, 0.47, 0.32, 0.98) both",
       },
       letterSpacing: {
         tightest: "-0.04em",
